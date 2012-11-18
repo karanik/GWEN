@@ -15,7 +15,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetBounds( 10, 10, 100, 100 );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Twice As Big" );
+			pTestButton->SetText( GWEN_T("Twice As Big") );
 			pTestButton->SetBounds( 0, 0, 200, 200 );
 		}
 
@@ -24,7 +24,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetBounds( 110, 10, 100, 100 );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Same Size" );
+			pTestButton->SetText( GWEN_T("Same Size") );
 			pTestButton->SetBounds( 0, 0, 100, 100 );
 		}
 
@@ -33,7 +33,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetBounds( 210, 10, 100, 100 );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Wide" );
+			pTestButton->SetText( GWEN_T("Wide") );
 			pTestButton->SetBounds( 0, 0, 200, 50 );
 		}
 
@@ -42,7 +42,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetBounds( 310, 10, 100, 100 );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Tall" );
+			pTestButton->SetText( GWEN_T("Tall") );
 			pTestButton->SetBounds( 0, 0, 50, 200 );
 		}
 
@@ -52,7 +52,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetScroll( false, true );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Vertical" );
+			pTestButton->SetText( GWEN_T("Vertical") );
 			pTestButton->SetBounds( 0, 0, 200, 200 );
 		}
 
@@ -62,7 +62,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetScroll( true, false );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Horinzontal" );
+			pTestButton->SetText( GWEN_T("Horinzontal") );
 			pTestButton->SetBounds( 0, 0, 200, 200 );
 		}
 
@@ -74,7 +74,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetAutoHideBars( true );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Twice As Big" );
+			pTestButton->SetText( GWEN_T("Twice As Big") );
 			pTestButton->SetBounds( 0, 0, 200, 200 );
 		}
 
@@ -84,7 +84,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetAutoHideBars( true );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Same Size" );
+			pTestButton->SetText( GWEN_T("Same Size") );
 			pTestButton->SetBounds( 0, 0, 100, 100 );
 		}
 
@@ -94,7 +94,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetAutoHideBars( true );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Wide" );
+			pTestButton->SetText( GWEN_T("Wide") );
 			pTestButton->SetBounds( 0, 0, 200, 50 );
 		}
 
@@ -104,7 +104,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetAutoHideBars( true );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Tall" );
+			pTestButton->SetText( GWEN_T("Tall") );
 			pTestButton->SetBounds( 0, 0, 50, 200 );
 		}
 
@@ -115,7 +115,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetScroll( false, true );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Vertical" );
+			pTestButton->SetText( GWEN_T("Vertical") );
 			pTestButton->SetBounds( 0, 0, 200, 200 );
 		}
 
@@ -126,7 +126,7 @@ class ScrollControl : public GUnit
 			pCtrl->SetScroll( true, false );
 
 			Controls::Button* pTestButton = new Controls::Button( pCtrl );
-			pTestButton->SetText( L"Horinzontal" );
+			pTestButton->SetText( GWEN_T("Horinzontal") );
 			pTestButton->SetBounds( 0, 0, 200, 200 );
 		}
 	}
@@ -135,4 +135,4 @@ class ScrollControl : public GUnit
 
 
 
-DEFINE_UNIT_TEST( ScrollControl, L"Scroll" );
+DEFINE_UNIT_TEST( ScrollControl, GWEN_T("Scroll") );

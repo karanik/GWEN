@@ -107,7 +107,7 @@ void ScrollControl::Render( Skin::Base* skin )
 	render->SetDrawColor( Gwen::Color( 255, 0, 0, 100 ) );
 	render->DrawFilledRect( m_InnerPanel->GetBounds() );
 
-	render->RenderText( skin->GetDefaultFont(), Gwen::Point( 0, 0 ), Utility::Format( L"Offset: %i %i", m_InnerPanel->X(), m_InnerPanel->Y() ) );
+	render->RenderText( skin->GetDefaultFont(), Gwen::Point( 0, 0 ), Utility::Format( GWEN_T("Offset: %i %i"), m_InnerPanel->X(), m_InnerPanel->Y() ) );
 
 #else //0
 

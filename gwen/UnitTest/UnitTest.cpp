@@ -11,13 +11,14 @@
 #include "Gwen/Controls/Layout/Position.h"
 #include "Gwen/Platform.h"
 
+
 using namespace Gwen;
 
 #define ADD_UNIT_TEST( name )\
 	GUnit* RegisterUnitTest_##name( Gwen::Controls::Base* tab );\
 	{\
-		Controls::Button* pButton = cat->Add( #name );\
-		pButton->SetName( #name );\
+		Controls::Button* pButton = cat->Add( GWEN_T(#name) );\
+		pButton->SetName( GWEN_T(#name) );\
 		GUnit* test = RegisterUnitTest_##name( pCenter );\
 		test->Hide();\
 		test->SetUnitTest( this );\
@@ -36,7 +37,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	Controls::CollapsibleList* pList = new Controls::CollapsibleList( this );
 	GetLeft()->GetTabControl()->AddPage( "CollapsibleList", pList );
 	GetLeft()->SetWidth( 150 );
-	
+
 	m_TextOutput = new Controls::ListBox( GetBottom() );
 	pButton = GetBottom()->GetTabControl()->AddPage( "Output", m_TextOutput );
 	GetBottom()->SetHeight( 200 );
@@ -47,7 +48,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	Controls::Layout::Center* pCenter = new Controls::Layout::Center( this );
 	pCenter->Dock( Pos::Fill );
 
-	{	
+	{
 		Controls::CollapsibleCategory* cat = pList->Add( "Basic" );
 
 		ADD_UNIT_TEST( Button );
@@ -55,7 +56,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 		ADD_UNIT_TEST( LabelMultiline );
 	}
 
-	{	
+	{
 		Controls::CollapsibleCategory* cat = pList->Add( "Non-Interactive" );
 
 		ADD_UNIT_TEST( ProgressBar );
@@ -64,13 +65,13 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 		ADD_UNIT_TEST( StatusBar );
 	}
 
-	{	
+	{
 		Controls::CollapsibleCategory* cat = pList->Add( "Controls" );
 
 		ADD_UNIT_TEST( ComboBox );
 		ADD_UNIT_TEST( TextBox );
 		ADD_UNIT_TEST( ListBox );
-		ADD_UNIT_TEST( CrossSplitter );		
+		ADD_UNIT_TEST( CrossSplitter );
 		ADD_UNIT_TEST( RadioButton );
 		ADD_UNIT_TEST( Checkbox );
 		ADD_UNIT_TEST( Numeric );
@@ -78,7 +79,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 		ADD_UNIT_TEST( MenuStrip );
 	}
 
-	{	
+	{
 		Controls::CollapsibleCategory* cat = pList->Add( "Containers" );
 
 		ADD_UNIT_TEST( Window );
@@ -90,7 +91,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 
 	}
 
-	{	
+	{
 		Controls::CollapsibleCategory* cat = pList->Add( "Non-Standard" );
 
 		ADD_UNIT_TEST( CollapsibleList );
@@ -98,13 +99,13 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	}
 
 	m_StatusBar->SendToBack();
-	
-	PrintText( L"Unit Test Started.\n" );
+
+	PrintText( GWEN_T("Unit Test Started.\n") );
 
 	m_fLastSecond = Gwen::Platform::GetTimeInSeconds();
 	m_iFrames = 0;
 
-	pList->GetNamedChildren( "MenuStrip" ).DoAction();
+	pList->GetNamedChildren( GWEN_T("MenuStrip") ).DoAction();
 }
 
 void UnitTest::OnCategorySelect( Gwen::Event::Info info )
@@ -131,7 +132,7 @@ void UnitTest::Render( Gwen::Skin::Base* skin )
 
 	if ( m_fLastSecond < Gwen::Platform::GetTimeInSeconds() )
 	{
-		m_StatusBar->SetText( Gwen::Utility::Format( L"GWEN Unit Test - %i fps", m_iFrames*2 ) );
+		m_StatusBar->SetText( Gwen::Utility::Format( GWEN_T("GWEN Unit Test - %i fps"), m_iFrames*2 ) );
 
 		m_fLastSecond = Gwen::Platform::GetTimeInSeconds() + 0.5f;
 		m_iFrames = 0;
@@ -144,10 +145,5 @@ void UnitTest::Render( Gwen::Skin::Base* skin )
 void GUnit::UnitPrint( Gwen::UnicodeString str )
 {
 	m_pUnitTest->PrintText( str );
-}
-
-void GUnit::UnitPrint( Gwen::String str )
-{
-	UnitPrint( Utility::StringToUnicode( str ) );
 }
 

@@ -34,7 +34,7 @@ void RichLabel::AddText( const Gwen::TextObject& text, Gwen::Color color, Gwen::
 	if ( text.length() == 0 ) return;
 
 	Gwen::Utility::Strings::UnicodeList lst;
-	Gwen::Utility::Strings::Split( text.GetUnicode(), L"\n", lst, false );
+	Gwen::Utility::Strings::Split( text.GetUnicode(), GWEN_T("\n"), lst, false );
 
 	for (size_t i=0; i<lst.size(); i++ )
 	{
@@ -61,7 +61,7 @@ bool RichLabel::SizeToChildren( bool w, bool h )
 void RichLabel::SplitLabel( const Gwen::UnicodeString& text, Gwen::Font* pFont, const DividedText& txt, int& x, int& y, int& lineheight )
 {
 	Gwen::Utility::Strings::UnicodeList lst;
-	Gwen::Utility::Strings::Split( text, L" ", lst, true );
+	Gwen::Utility::Strings::Split( text, GWEN_T(" "), lst, true );
 	if ( lst.size() == 0 ) return;
 
 	int iSpaceLeft = Width() - x;
@@ -88,7 +88,7 @@ void RichLabel::SplitLabel( const Gwen::UnicodeString& text, Gwen::Font* pFont, 
 		}
 	}
 
-	Gwen::UnicodeString strNewString = L"";
+	Gwen::UnicodeString strNewString = GWEN_T("");
 	for ( size_t i=0; i<lst.size(); i++ )
 	{
 		Gwen::Point WordSize = GetSkin()->GetRender()->MeasureText( pFont, strNewString + lst[i] );
@@ -143,7 +143,7 @@ void RichLabel::CreateLabel( const Gwen::UnicodeString& text, const DividedText&
 	}
 
 	Gwen::Controls::Label*	pLabel = new Gwen::Controls::Label( this );
-	pLabel->SetText( x == 0 ? Gwen::Utility::Strings::TrimLeft<Gwen::UnicodeString>( text, L" " ) : text );
+	pLabel->SetText( x == 0 ? Gwen::Utility::Strings::TrimLeft<Gwen::UnicodeString>( text, GWEN_T(" ") ) : text );
 	pLabel->SetTextColor( txt.color );
 	pLabel->SetFont( pFont );
 	pLabel->SizeToContents();

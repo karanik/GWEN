@@ -33,7 +33,7 @@ GWEN_CONTROL_CONSTRUCTOR( Button )
 void Button::Render( Skin::Base* skin )
 {
 	if ( !ShouldDrawBackground() ) return;
-	
+
 	bool bDrawDepressed = IsDepressed() && IsHovered();
 	if ( IsToggle() ) bDrawDepressed = bDrawDepressed || GetToggleState();
 
@@ -115,7 +115,7 @@ void Button::OnPress()
 
 void Button::SetImage( const TextObject& strName, bool bCenter )
 {
-	if ( strName.GetUnicode() == L"" )
+	if ( strName.GetUnicode().empty())
 	{
 		if ( m_Image )
 		{
@@ -142,8 +142,8 @@ void Button::SetImage( const TextObject& strName, bool bCenter )
 	SetTextPadding( padding );
 }
 
-void Button::SetToggleState( bool b ) 
-{ 
+void Button::SetToggleState( bool b )
+{
 	if ( m_bToggleStatus == b ) return;
 
 	m_bToggleStatus = b;
@@ -196,16 +196,16 @@ void Button::UpdateColours()
 	if ( IsDisabled() )		return SetTextColor( GetSkin()->Colors.Button.Disabled );
 	if ( IsDepressed() || GetToggleState() )	return SetTextColor( GetSkin()->Colors.Button.Down );
 	if ( IsHovered() )		return SetTextColor( GetSkin()->Colors.Button.Hover );
-	
+
 	SetTextColor( GetSkin()->Colors.Button.Normal );
 }
 
 void Button::PostLayout( Skin::Base* pSkin )
 {
-	BaseClass::PostLayout( pSkin );	
+	BaseClass::PostLayout( pSkin );
 
-	if ( m_Image )	
-	{		
+	if ( m_Image )
+	{
 		if ( m_bCenterImage )
 			m_Image->Position( Pos::Center );
 		else
@@ -214,10 +214,10 @@ void Button::PostLayout( Skin::Base* pSkin )
 }
 
 void Button::OnMouseDoubleClickLeft( int x, int y )
-{ 
+{
 	if ( IsDisabled() ) return;
 
-	OnMouseClickLeft( x, y, true ); 
+	OnMouseClickLeft( x, y, true );
 	onDoubleClick.Call( this );
 }
 

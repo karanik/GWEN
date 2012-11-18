@@ -16,11 +16,11 @@ class ComboBox : public GUnit
 			combo->SetWidth( 200 );
 
 
-			combo->AddItem( L"Option One", "one" );
-			combo->AddItem( L"Number Two", "two" );
-			combo->AddItem( L"Door Three", "three" );
-			combo->AddItem( L"Four Legs", "four" );
-			combo->AddItem( L"Five Birds", "five" );
+			combo->AddItem( GWEN_T("Option One"), "one" );
+			combo->AddItem( GWEN_T("Number Two"), "two" );
+			combo->AddItem( GWEN_T("Door Three"), "three" );
+			combo->AddItem( GWEN_T("Four Legs"), "four" );
+			combo->AddItem( GWEN_T("Five Birds"), "five" );
 
 			combo->onSelection.Add( this, &ComboBox::OnComboSelect );
 		}
@@ -39,7 +39,7 @@ class ComboBox : public GUnit
 			combo->SetWidth( 200 );
 
 			for (int i=0; i<500; i++ )
-				combo->AddItem( L"Lots Of Options" );
+				combo->AddItem( GWEN_T("Lots Of Options") );
 		}
 
 	}
@@ -48,10 +48,10 @@ class ComboBox : public GUnit
 	{
 		Gwen::Controls::ComboBox* combo = (Gwen::Controls::ComboBox*)pControl;
 
-		UnitPrint( Utility::Format( L"Combo Changed: %s", combo->GetSelectedItem()->GetText().GetUnicode().c_str() ) );
+		UnitPrint( Utility::Format( GWEN_T("Combo Changed: %s"), combo->GetSelectedItem()->GetText().GetUnicode().c_str() ) );
 	}
 };
 
 
 
-DEFINE_UNIT_TEST( ComboBox, L"ComboBox" );
+DEFINE_UNIT_TEST( ComboBox, GWEN_T("ComboBox") );

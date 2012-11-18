@@ -7,7 +7,7 @@
 #include "Gwen/Controls/Button.h"
 #include "Gwen/Controls/Dialogs/FolderOpen.h"
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -24,8 +24,8 @@ namespace Gwen
 					pButton->onPress.Add( this, &ThisClass::OnButtonPress );
 					pButton->SetMargin( Margin( 1, 1, 1, 2 ) );
 
-					m_strDialogName = "Find File";
-					m_strFileExtension = "*.*";
+					m_strDialogName = GWEN_T("Find File");
+					m_strFileExtension = GWEN_T("*.*");
 				}
 
 				File* SetExtension( const Gwen::String& string )

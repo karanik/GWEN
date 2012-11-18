@@ -13,7 +13,7 @@
 #include "Gwen/Controls/ScrollControl.h"
 
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -22,19 +22,19 @@ namespace Gwen
 		class GWEN_EXPORT ListBox : public ScrollControl
 		{
 			public:
-				
+
 				GWEN_CONTROL( ListBox, ScrollControl );
 
 				typedef std::list<Layout::TableRow*> Rows;
 
-				Layout::TableRow* AddItem( const TextObject& strLabel, const String& strName = "" );
+				Layout::TableRow* AddItem( const TextObject& strLabel, const String& strName = GWEN_T("") );
 
 				void RemoveItem( Layout::TableRow * row );
 
 				void Render( Skin::Base* skin );
 				void Layout( Skin::Base* skin );
 
-				void UnselectAll();			
+				void UnselectAll();
 
 				void SetAllowMultiSelect( bool bMultiSelect ){ m_bMultiSelect = bMultiSelect; }
 				bool AllowMultiSelect() const { return m_bMultiSelect; }
@@ -46,7 +46,7 @@ namespace Gwen
 
 				virtual void SetSelectedRow( Gwen::Controls::Base* pRow, bool bClearOthers = true );
 				virtual void SelectByString( const TextObject& string, bool bClearOthers = true );
-				
+
 				Gwen::Event::Caller	onRowSelected;
 
 				Controls::Layout::Table* GetTable() { return m_Table; }
@@ -58,9 +58,9 @@ namespace Gwen
 
 			protected:
 
-				
+
 				void OnRowSelected( Base* pControl );
-				
+
 				Controls::Layout::Table*		m_Table;
 				ListBox::Rows					m_SelectedRows;
 

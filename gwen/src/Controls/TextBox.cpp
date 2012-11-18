@@ -49,10 +49,10 @@ GWEN_CONTROL_CONSTRUCTOR( TextBox )
 
 	SetTabable( true );
 
-	AddAccelerator( L"Ctrl + C", &TextBox::OnCopy );
-	AddAccelerator( L"Ctrl + X", &TextBox::OnCut );
-	AddAccelerator( L"Ctrl + V", &TextBox::OnPaste );
-	AddAccelerator( L"Ctrl + A", &TextBox::OnSelectAll );
+	AddAccelerator( GWEN_T("Ctrl + C"), &TextBox::OnCopy );
+	AddAccelerator( GWEN_T("Ctrl + X"), &TextBox::OnCut );
+	AddAccelerator( GWEN_T("Ctrl + V"), &TextBox::OnPaste );
+	AddAccelerator( GWEN_T("Ctrl + A"), &TextBox::OnSelectAll );
 
 	Gwen::Anim::Add( this, new ChangeCaretColor() );
 }
@@ -189,7 +189,7 @@ void TextBox::OnMouseDoubleClickLeft( int /*x*/, int /*y*/ )
 
 UnicodeString TextBox::GetSelection()
 {
-	if ( !HasSelection() ) return L"";
+	if ( !HasSelection() ) return GWEN_T("");
 
 	int iStart = Utility::Min( m_iCursorPos, m_iCursorEnd );
 	int iEnd = Utility::Max( m_iCursorPos, m_iCursorEnd );
@@ -469,7 +469,7 @@ bool TextBoxMultiline::OnKeyReturn( bool bDown )
 {
 	if ( bDown )
 	{
-		InsertText( L"\n" );
+		InsertText( GWEN_T("\n") );
 	}
 
 	return true;

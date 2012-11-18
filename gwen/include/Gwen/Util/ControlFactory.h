@@ -28,7 +28,7 @@ namespace Gwen
 				virtual void					SetValue( Gwen::Controls::Base* ctrl, const Gwen::UnicodeString& str ) = 0;
 
 				virtual int						OptionNum(){ return 0; }
-				virtual Gwen::UnicodeString		OptionGet( int i ){ return L"";}
+				virtual Gwen::UnicodeString		OptionGet( int i ){ return GWEN_T("");}
 
 				virtual int						NumCount(){ return 0; };
 				virtual Gwen::String			NumName( int i ){ return "unknown"; };

@@ -23,7 +23,7 @@ namespace Gwen
 		Font()
 		{
 			data = NULL;
-			facename = L"Arial";
+			facename = GWEN_T("Arial");
 			size = 10;
 			realsize = 0;
 			bold = false;
@@ -41,7 +41,7 @@ namespace Gwen
 		// This is the real font size, after it's
 		// been scaled by Render->Scale()
 		float realsize;
-		
+
 	};
 
 } //namespace Gwen

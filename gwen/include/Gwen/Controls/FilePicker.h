@@ -13,7 +13,7 @@
 #include "Gwen/Controls/TextBox.h"
 
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -35,7 +35,7 @@ namespace Gwen
 
 					this->SetSize( 100, 20 );
 
-					SetFileType( "Any Type | *.*" );
+					SetFileType( GWEN_T("Any Type | *.*") );
 				}
 
 				void SetFileType( const Gwen::String& string ) { m_FileType = string; }
@@ -55,7 +55,7 @@ namespace Gwen
 
 				void OnBrowse()
 				{
-					Gwen::Dialogs::FileOpen( true, "Name", "Start Path", m_FileType, this, &FilePicker::SetFileNameEvent );
+					Gwen::Dialogs::FileOpen( true, GWEN_T("Name"), GWEN_T("Start Path"), m_FileType, this, &FilePicker::SetFileNameEvent );
 				}
 
 				virtual TextObject GetValue(){ return GetFileName(); }

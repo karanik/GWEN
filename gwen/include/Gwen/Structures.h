@@ -14,6 +14,7 @@
 
 #include "Gwen/Exports.h"
 #include <string>
+#include <stdio.h>
 
 namespace Gwen
 {
@@ -39,10 +40,24 @@ namespace Gwen
 		static const unsigned char Count	= 10;
 	}
 
-	typedef std::wstring UnicodeString;
-	typedef std::string String;
+//	typedef std::string UnicodeString;
+//	typedef std::wstring UnicodeString;
+	typedef std::string UnicodeString;
+//	typedef std::string String;
+	typedef UnicodeString String;
+	typedef std::ostringstream UnicodeOStringStream;
 
-	typedef wchar_t UnicodeChar; // Portability??
+//	#define GWEN_VSNPRINTF	vswprintf
+	#define GWEN_VSNPRINTF	vsnprintf
+	#define GWEN_STRTOL		strtol //wcstol
+	#define GWEN_STRTOF		strtof	//wcstod
+
+
+//	typedef wchar_t UnicodeChar; // Portability??
+	typedef char UnicodeChar;
+	#define GWEN_T(x)		x
+
+
 
 	struct GWEN_EXPORT Margin
 	{
@@ -73,7 +88,7 @@ namespace Gwen
 	typedef Margin Padding;
 
 
-	struct GWEN_EXPORT Rect 
+	struct GWEN_EXPORT Rect
 	{
 		Rect( int x_ = 0, int y_ = 0, int w_ = 0, int h_ = 0 )
 		{
@@ -101,9 +116,9 @@ namespace Gwen
 
 	struct GWEN_EXPORT Point
 	{
-		Point(int x_ = 0, int y_ = 0) 
-		{ 
-			this->x = x_; 
+		Point(int x_ = 0, int y_ = 0)
+		{
+			this->x = x_;
 			this->y = y_;
 		}
 
@@ -132,7 +147,7 @@ namespace Gwen
 		int x, y;
 	};
 
-	struct GWEN_EXPORT HSV 
+	struct GWEN_EXPORT HSV
 	{
 		float h;
 		float s;
@@ -184,31 +199,31 @@ namespace Gwen
 
 		Color operator *( float f )
 		{
-			return Color( 
-				(float)this->r*f, 
-				(float)this->g*f, 
-				(float)this->b*f, 
-				(float)this->a*f 
+			return Color(
+				(float)this->r*f,
+				(float)this->g*f,
+				(float)this->b*f,
+				(float)this->a*f
 				);
 		}
 
 		Color operator - ( Color c )
 		{
-			return Color( 
-				this->r - c.r, 
-				this->g - c.g, 
-				this->b - c.b, 
-				this->a - c.a 
+			return Color(
+				this->r - c.r,
+				this->g - c.g,
+				this->b - c.b,
+				this->a - c.a
 				);
 		}
 
 		Color operator + ( Color c )
 		{
-			return Color( 
-				this->r + c.r, 
-				this->g + c.g, 
-				this->b + c.b, 
-				this->a + c.a 
+			return Color(
+				this->r + c.r,
+				this->g + c.g,
+				this->b + c.b,
+				this->a + c.a
 				);
 		}
 
@@ -216,7 +231,7 @@ namespace Gwen
 		{
 			return c.r==r && c.g==g && c.b==b && c.a==a;
 		}
-		
+
 
 		unsigned char r, g, b, a;
 	};

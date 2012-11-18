@@ -40,15 +40,15 @@ class PageControl : public GUnit
 
 	void OnPageChanged( Event::Info info )
 	{
-		UnitPrint( Utility::Format( L"PageControl Changed Page: %i", info.Integer ) );
+		UnitPrint( Utility::Format( GWEN_T("PageControl Changed Page: %i"), info.Integer ) );
 	}
 
 	void OnFinish( Event::Info info )
 	{
-		UnitPrint( L"Finish Pressed" );
+		UnitPrint( GWEN_T("Finish Pressed") );
 	}
 };
 
 
 
-DEFINE_UNIT_TEST( PageControl, L"PageControl" );
+DEFINE_UNIT_TEST( PageControl, GWEN_T("PageControl") );

@@ -50,4 +50,4 @@ class LabelMultiline : public GUnit
 
 
 
-DEFINE_UNIT_TEST( LabelMultiline, L"LabelMultiline" );
+DEFINE_UNIT_TEST( LabelMultiline, GWEN_T("LabelMultiline") );

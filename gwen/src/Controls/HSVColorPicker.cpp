@@ -45,12 +45,12 @@ GWEN_CONTROL_CONSTRUCTOR( HSVColorPicker )
 
 	{
 		Label* label = new Label( this );
-		label->SetText(L"R:");
+		label->SetText(GWEN_T("R:"));
 		label->SizeToContents();
 		label->SetPos( x, y );
 
 		TextBoxNumeric* numeric = new TextBoxNumeric( this );
-		numeric->SetName( "RedBox" );
+		numeric->SetName( GWEN_T("RedBox") );
 		numeric->SetPos( x + 15, y -1  );
 		numeric->SetSize( 26, 16 );
 		numeric->SetSelectAllOnFocus( true );
@@ -62,13 +62,13 @@ GWEN_CONTROL_CONSTRUCTOR( HSVColorPicker )
 
 	{
 		Label* label = new Label( this );
-		label->SetText(L"G:");
+		label->SetText(GWEN_T("G:"));
 		label->SizeToContents();
 		label->SetPos( x, y );
 
-		
+
 		TextBoxNumeric* numeric = new TextBoxNumeric( this );
-		numeric->SetName( "GreenBox" );
+		numeric->SetName( GWEN_T("GreenBox") );
 		numeric->SetPos( x + 15, y -1  );
 		numeric->SetSize( 26, 16 );
 		numeric->SetSelectAllOnFocus( true );
@@ -79,13 +79,13 @@ GWEN_CONTROL_CONSTRUCTOR( HSVColorPicker )
 
 	{
 		Label* label = new Label( this );
-		label->SetText(L"B:");
+		label->SetText(GWEN_T("B:"));
 		label->SizeToContents();
 		label->SetPos( x, y );
 
 
 		TextBoxNumeric* numeric = new TextBoxNumeric( this );
-		numeric->SetName( "BlueBox" );
+		numeric->SetName( GWEN_T("BlueBox") );
 		numeric->SetPos( x + 15, y -1  );
 		numeric->SetSize( 26, 16 );
 		numeric->SetSelectAllOnFocus( true );
@@ -98,27 +98,27 @@ void HSVColorPicker::NumericTyped( Gwen::Controls::Base* control )
 	TextBoxNumeric* box = gwen_cast<TextBoxNumeric>(control);
 	if ( !box ) return;
 
-	if ( box->GetText() == L"" )	return;
+	if ( box->GetText() == GWEN_T("") )	return;
 
-	int textValue = atoi( box->GetText().c_str()  );
+	int textValue = Gwen::Utility::Strings::To::Int(box->GetText().Get());
 	if ( textValue < 0 ) textValue = 0;
 	if ( textValue > 255 ) textValue = 255;
 
 	Gwen::Color newColor = GetColor();
 
-	if ( box->GetName().find( "Red" ) != Gwen::String::npos )
+	if ( box->GetName().find( GWEN_T("Red") ) != Gwen::String::npos )
 	{
 		newColor.r = textValue;
 	}
-	else if ( box->GetName().find( "Green" ) != Gwen::String::npos )
+	else if ( box->GetName().find( GWEN_T("Green") ) != Gwen::String::npos )
 	{
 		newColor.g = textValue;
 	}
-	else if ( box->GetName().find( "Blue" ) != Gwen::String::npos )
+	else if ( box->GetName().find( GWEN_T("Blue") ) != Gwen::String::npos )
 	{
 		newColor.b = textValue;
 	}
-	else if ( box->GetName().find( "Alpha" ) != Gwen::String::npos )
+	else if ( box->GetName().find( GWEN_T("Alpha") ) != Gwen::String::npos )
 	{
 		newColor.a = textValue;
 	}
@@ -130,13 +130,13 @@ void HSVColorPicker::UpdateControls(Gwen::Color color)
 {
 	// What in the FUCK
 
-	TextBoxNumeric* redBox = gwen_cast<TextBoxNumeric>(	FindChildByName( "RedBox",   false ) );
+	TextBoxNumeric* redBox = gwen_cast<TextBoxNumeric>(	FindChildByName( GWEN_T("RedBox"),   false ) );
 	if ( redBox )    redBox->SetText( Gwen::Utility::ToString( (int)color.r), false );
 
-	TextBoxNumeric* greenBox = gwen_cast<TextBoxNumeric>(	FindChildByName( "GreenBox",   false ) );
+	TextBoxNumeric* greenBox = gwen_cast<TextBoxNumeric>(	FindChildByName( GWEN_T("GreenBox"),   false ) );
 	if ( greenBox )  greenBox->SetText( Gwen::Utility::ToString( (int)color.g ), false );
 
-	TextBoxNumeric* blueBox = gwen_cast<TextBoxNumeric>(	FindChildByName( "BlueBox",   false ) );
+	TextBoxNumeric* blueBox = gwen_cast<TextBoxNumeric>(	FindChildByName( GWEN_T("BlueBox"),   false ) );
 	if ( blueBox )   blueBox->SetText( Gwen::Utility::ToString( (int)color.b ), false );
 
 	m_After->SetColor( color );

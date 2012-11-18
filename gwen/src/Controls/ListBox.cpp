@@ -54,7 +54,7 @@ class ListBoxRow : public Layout::TableRow
 	private:
 
 	bool			m_bSelected;
-	
+
 };
 
 GWEN_CONTROL_CONSTRUCTOR( ListBox )
@@ -127,7 +127,7 @@ void ListBox::OnRowSelected( Base* pControl )
 }
 
 Layout::TableRow* ListBox::GetSelectedRow()
-{ 
+{
 	if ( m_SelectedRows.empty() ) return NULL;
 
 	return *m_SelectedRows.begin();
@@ -136,7 +136,7 @@ Layout::TableRow* ListBox::GetSelectedRow()
 Gwen::String ListBox::GetSelectedRowName()
 {
 	Layout::TableRow* row = GetSelectedRow();
-	if ( !row ) return "";
+	if ( !row ) return GWEN_T("");
 
 	return row->GetName();
 }

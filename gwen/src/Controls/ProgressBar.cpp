@@ -61,11 +61,11 @@ void ProgressBar::SetValue(float val)
 		val = 1;
 
 	m_fProgress = val;
-	
+
 	if ( m_bAutoLabel )
 	{
 		int displayVal = m_fProgress * 100;
-		SetText( Utility::ToString( displayVal ) + "%" );
+		SetText( Utility::ToString( displayVal ) + GWEN_T("%") );
 	}
 }
 
@@ -73,9 +73,9 @@ void ProgressBar::CycleThink( float fDelta )
 {
 	if ( !Visible() ) return;
 	if ( m_fCycleSpeed == 0.0f ) return;
-	
+
 	m_fProgress += m_fCycleSpeed * fDelta;
-	
+
 	if ( m_fProgress < 0.0f ) m_fProgress += 1.0f;
 	if ( m_fProgress > 1.0f ) m_fProgress -= 1.0f;
 

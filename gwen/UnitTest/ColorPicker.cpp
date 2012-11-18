@@ -22,4 +22,4 @@ class ColorPicker : public GUnit
 
 
 
-DEFINE_UNIT_TEST( ColorPicker, L"ColorPicker" );
+DEFINE_UNIT_TEST( ColorPicker, GWEN_T("ColorPicker") );

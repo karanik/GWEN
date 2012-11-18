@@ -6,13 +6,13 @@
 #include "Gwen/Controls/Menu.h"
 #include "Gwen/Controls/HSVColorPicker.h"
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
 		namespace Internal
 		{
-			class ColourButton : public Button 
+			class ColourButton : public Button
 			{
 				GWEN_CONTROL_INLINE ( ColourButton, Button )
 				{
@@ -70,8 +70,8 @@ namespace Gwen
 					Gwen::Controls::HSVColorPicker* picker = gwen_cast<Gwen::Controls::HSVColorPicker>( control );
 
 					Gwen::String colorStr;
-					colorStr += Gwen::Utility::ToString( ( int )picker->GetColor().r ) + " ";
-					colorStr += Gwen::Utility::ToString( ( int )picker->GetColor().g ) + " ";
+					colorStr += Gwen::Utility::ToString( ( int )picker->GetColor().r ) + GWEN_T(" ");
+					colorStr += Gwen::Utility::ToString( ( int )picker->GetColor().g ) + GWEN_T(" ");
 					colorStr += Gwen::Utility::ToString( ( int )picker->GetColor().b );
 
 					m_TextBox->SetText( colorStr );

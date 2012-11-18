@@ -16,7 +16,7 @@
 #include "Gwen/Controls/Menu.h"
 
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -40,7 +40,7 @@ namespace Gwen
 
 				virtual void ClearItems();
 
-				virtual MenuItem* AddItem( const UnicodeString& strLabel, const String& strName = "" );
+				virtual MenuItem* AddItem( const UnicodeString& strLabel, const String& strName = GWEN_T("") );
 				virtual bool OnKeyUp( bool bDown );
 				virtual bool OnKeyDown( bool bDown );
 
@@ -64,7 +64,7 @@ namespace Gwen
 				Controls::Base*	m_Button;
 
 		};
-		
+
 	}
 }
 #endif

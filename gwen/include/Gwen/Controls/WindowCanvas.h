@@ -15,7 +15,7 @@
 #include "Gwen/Controls/Label.h"
 #include "Gwen/Controls/WindowButtons.h"
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -25,11 +25,11 @@ namespace Gwen
 
 				GWEN_CLASS( WindowCanvas, Controls::Canvas );
 
-				WindowCanvas( int x, int y, int w, int h, Gwen::Skin::Base* pRenderer, const Gwen::String& strWindowTitle = "" );
+				WindowCanvas( int x, int y, int w, int h, Gwen::Skin::Base* pRenderer, const Gwen::String& strWindowTitle = GWEN_T("") );
 				~WindowCanvas();
 
 				virtual void DoThink();
-				
+
 				virtual bool WantsQuit(){ return m_bQuit; }
 
 				// Gwen::WindowProvider

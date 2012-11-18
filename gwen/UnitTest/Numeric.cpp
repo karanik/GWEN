@@ -21,11 +21,11 @@ class Numeric : public GUnit
 
 	void onButtonA( Controls::Base* pControl )
 	{
-	//	UnitPrint( L"Button Pressed (using 'OnPress' event)" );
+	//	UnitPrint( GWEN_T("Button Pressed (using 'OnPress' event)") );
 	}
 
 };
 
 
 
-DEFINE_UNIT_TEST( Numeric, L"Numeric" );
+DEFINE_UNIT_TEST( Numeric, GWEN_T("Numeric") );

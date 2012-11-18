@@ -13,7 +13,7 @@
 #include "Gwen/Controls/RadioButton.h"
 
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -29,8 +29,7 @@ namespace Gwen
 
 				virtual void OnChange();
 
-				virtual LabeledRadioButton* AddOption( const Gwen::String& strText, const Gwen::String& strOptionName = "" );
-				virtual LabeledRadioButton* AddOption( const Gwen::UnicodeString& strText, const Gwen::String& strOptionName = "" );
+				virtual LabeledRadioButton* AddOption( const Gwen::UnicodeString& strText, const Gwen::UnicodeString& strOptionName = GWEN_T("") );
 
 				virtual LabeledRadioButton*	GetSelected(){ return m_Selected; }
 

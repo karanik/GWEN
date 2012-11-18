@@ -13,7 +13,7 @@
 #include "Gwen/Controls/TextBox.h"
 
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -35,7 +35,7 @@ namespace Gwen
 
 					this->SetSize( 100, 20 );
 
-					m_BrowseName = "Find Folder";
+					m_BrowseName = GWEN_T("Find Folder");
 				}
 
 
@@ -55,7 +55,7 @@ namespace Gwen
 
 				void OnBrowse()
 				{
-					Gwen::Dialogs::FolderOpen( true, "Name", GetFolder().Get(), this, &FolderPicker::SetFolderCallback );
+					Gwen::Dialogs::FolderOpen( true, GWEN_T("Name"), GetFolder().Get(), this, &FolderPicker::SetFolderCallback );
 				}
 
 				virtual TextObject GetValue(){ return GetFolder(); }

@@ -15,7 +15,7 @@ class RadioButton : public GUnit
 		rc->AddOption( "Option 1" );
 		rc->AddOption( "Option 2" );
 		rc->AddOption( "Option 3" );		
-		rc->AddOption( L"\u0627\u0644\u0622\u0646 \u0644\u062D\u0636\u0648\u0631" );
+		rc->AddOption( GWEN_T("\u0627\u0644\u0622\u0646 \u0644\u062D\u0636\u0648\u0631") );
 
 		rc->SetBounds( 30, 30, 200, 200 );
 
@@ -29,10 +29,10 @@ class RadioButton : public GUnit
 		Gwen::Controls::RadioButtonController* rc = (Gwen::Controls::RadioButtonController*) pControl;
 		Gwen::Controls::LabeledRadioButton* pSelected = rc->GetSelected();
 
-		UnitPrint( Utility::Format( L"RadioButton changed (using 'OnChange' event)\n Chosen Item: '%s'", pSelected->GetLabel()->GetText().GetUnicode().c_str() ) );
+		UnitPrint( Utility::Format( GWEN_T("RadioButton changed (using 'OnChange' event)\n Chosen Item: '%s'"), pSelected->GetLabel()->GetText().GetUnicode().c_str() ) );
 	}
 };
 
 
 
-DEFINE_UNIT_TEST( RadioButton, L"RadioButton" );
+DEFINE_UNIT_TEST( RadioButton, GWEN_T("RadioButton") );

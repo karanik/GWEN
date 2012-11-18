@@ -101,4 +101,4 @@ class CrossSplitter : public GUnit
 
 
 
-DEFINE_UNIT_TEST( CrossSplitter, L"CrossSplitter" );
+DEFINE_UNIT_TEST( CrossSplitter, GWEN_T("CrossSplitter") );

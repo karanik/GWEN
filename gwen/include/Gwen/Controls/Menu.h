@@ -13,7 +13,7 @@
 #include "Gwen/Controls/MenuItem.h"
 #include "Gwen/Controls/ScrollControl.h"
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -30,7 +30,7 @@ namespace Gwen
 
 				virtual void Layout( Skin::Base* skin );
 
-				virtual MenuItem* AddItem( const TextObject& strName, const TextObject& strIconName = L"", const TextObject& strAccelerator = L"" );
+				virtual MenuItem* AddItem( const TextObject& strName, const TextObject& strIconName = GWEN_T(""), const TextObject& strAccelerator = GWEN_T("") );
 
 				virtual void AddDivider();
 
@@ -56,7 +56,7 @@ namespace Gwen
 
 				virtual bool ShouldHoverOpenMenu(){ return true; }
 				virtual void OnAddItem( MenuItem* item );
-			
+
 				bool m_bDisableIconMargin;
 				bool m_bDeleteOnClose;
 		};

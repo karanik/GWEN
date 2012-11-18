@@ -14,22 +14,22 @@ class MenuStrip : public GUnit
 		Gwen::Controls::MenuStrip* menu = new Gwen::Controls::MenuStrip( this );
 
 		{
-			Gwen::Controls::MenuItem* pRoot = menu->AddItem( L"File" );
-			pRoot->GetMenu()->AddItem( L"New", L"test16.png", "Ctrl + N" )->SetAction( this, &ThisClass::MenuItemSelect );
-			pRoot->GetMenu()->AddItem( L"Load", L"test16.png", "Ctrl+L" )->SetAction( this, &ThisClass::MenuItemSelect );
-			pRoot->GetMenu()->AddItem( L"Save", "", "CTRL+S" )->SetAction( this, &ThisClass::MenuItemSelect );
-			pRoot->GetMenu()->AddItem( L"Save As..", "", "Ctrl+Shift+S" )->SetAction( this, &ThisClass::MenuItemSelect );
-			pRoot->GetMenu()->AddItem( L"Quit", "", "Ctrl+Q" )->SetAction( this, &ThisClass::MenuItemSelect );
+			Gwen::Controls::MenuItem* pRoot = menu->AddItem( GWEN_T("File") );
+			pRoot->GetMenu()->AddItem( GWEN_T("New"), GWEN_T("test16.png"), "Ctrl + N" )->SetAction( this, &ThisClass::MenuItemSelect );
+			pRoot->GetMenu()->AddItem( GWEN_T("Load"), GWEN_T("test16.png"), "Ctrl+L" )->SetAction( this, &ThisClass::MenuItemSelect );
+			pRoot->GetMenu()->AddItem( GWEN_T("Save"), GWEN_T(""), "CTRL+S" )->SetAction( this, &ThisClass::MenuItemSelect );
+			pRoot->GetMenu()->AddItem( GWEN_T("Save As.."), GWEN_T(""), "Ctrl+Shift+S" )->SetAction( this, &ThisClass::MenuItemSelect );
+			pRoot->GetMenu()->AddItem( GWEN_T("Quit"), GWEN_T(""), "Ctrl+Q" )->SetAction( this, &ThisClass::MenuItemSelect );
 		}
 
 		{
-			Gwen::Controls::MenuItem* pRoot = menu->AddItem( L"\u043F\u0438\u0440\u0430\u0442\u0441\u0442\u0432\u043E" );
-			pRoot->GetMenu()->AddItem( L"\u5355\u5143\u6D4B\u8BD5" )->SetAction( this, &ThisClass::MenuItemSelect );
-			pRoot->GetMenu()->AddItem( L"\u0111\u01A1n v\u1ECB th\u1EED nghi\u1EC7m" )->SetAction( this, &ThisClass::MenuItemSelect );
+			Gwen::Controls::MenuItem* pRoot = menu->AddItem( GWEN_T("\u043F\u0438\u0440\u0430\u0442\u0441\u0442\u0432\u043E") );
+			pRoot->GetMenu()->AddItem( GWEN_T("\u5355\u5143\u6D4B\u8BD5") )->SetAction( this, &ThisClass::MenuItemSelect );
+			pRoot->GetMenu()->AddItem( GWEN_T("\u0111\u01A1n v\u1ECB th\u1EED nghi\u1EC7m") )->SetAction( this, &ThisClass::MenuItemSelect );
 		}
 
 		{
-			Gwen::Controls::MenuItem* pRoot = menu->AddItem( L"Submenu" );
+			Gwen::Controls::MenuItem* pRoot = menu->AddItem( GWEN_T("Submenu") );
 
 			Gwen::Controls::MenuItem* pCheckable = pRoot->GetMenu()->AddItem( "Checkable" );
 			pCheckable->SetCheckable( true );
@@ -91,7 +91,7 @@ class MenuStrip : public GUnit
 			}
 
 			pRoot->GetMenu()->AddItem( "Seven" );
-			
+
 		}
 	}
 
@@ -99,11 +99,11 @@ class MenuStrip : public GUnit
 	{
 		Gwen::Controls::MenuItem* pMenuItem = (Gwen::Controls::MenuItem*)pControl;
 
-		UnitPrint( Utility::Format( L"Menu Selected: %s", pMenuItem->GetText().GetUnicode().c_str() ) );
+		UnitPrint( Utility::Format( GWEN_T("Menu Selected: %s"), pMenuItem->GetText().GetUnicode().c_str() ) );
 	}
 
 };
 
 
 
-DEFINE_UNIT_TEST( MenuStrip, L"MenuStrip" );
+DEFINE_UNIT_TEST( MenuStrip, GWEN_T("MenuStrip") );
