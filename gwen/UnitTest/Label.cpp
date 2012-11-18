@@ -11,7 +11,7 @@ class Label : public GUnit
 	{
 		{
 			Gwen::Controls::Label* label = new Gwen::Controls::Label( this );
-			label->SetText( "Garry's Normal Label" );
+			label->SetText( GWEN_T("Garry's Normal Label") );
 			label->SizeToContents();
 			label->SetPos( 10, 10 );
 		}

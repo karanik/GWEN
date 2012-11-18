@@ -22,28 +22,28 @@ class CrossSplitter : public GUnit
 
 		{
 			Gwen::Controls::Button* testButton =  new Gwen::Controls::Button( m_Splitter );
-			testButton->SetText( "TOPLEFT");
+			testButton->SetText( GWEN_T("TOPLEFT") );
 			m_Splitter->SetPanel( 0, testButton );
 		}
 
 		{
 			Gwen::Controls::Button* testButton =  new Gwen::Controls::Button( m_Splitter );
-			testButton->SetText( "TOPRIGHT");
+			testButton->SetText( GWEN_T("TOPRIGHT") );
 			m_Splitter->SetPanel( 1, testButton );
 		}
 
 		{
 			Gwen::Controls::Button* testButton =  new Gwen::Controls::Button( m_Splitter );
-			testButton->SetText( "BOTTOMRIGHT");
+			testButton->SetText( GWEN_T("BOTTOMRIGHT") );
 			m_Splitter->SetPanel( 2, testButton );
 		}
 
 		{
 			Gwen::Controls::Button* testButton =  new Gwen::Controls::Button( m_Splitter );
-			testButton->SetText( "BOTTOMLEFT");
+			testButton->SetText( GWEN_T("BOTTOMLEFT") );
 			m_Splitter->SetPanel( 3, testButton );
 		}
-	
+
 
 		//Status bar to hold unit testing buttons
 		Gwen::Controls::StatusBar* pStatus = new Gwen::Controls::StatusBar( this );
@@ -52,21 +52,21 @@ class CrossSplitter : public GUnit
 
 		{
 			Gwen::Controls::Button* pButton = new Gwen::Controls::Button( pStatus );
-			pButton->SetText( "Zoom" );
+			pButton->SetText( GWEN_T("Zoom") );
 			pButton->onPress.Add( this, &CrossSplitter::ZoomTest );
 			pStatus->AddControl( pButton, false );
 		}
 
 		{
 			Gwen::Controls::Button* pButton = new Gwen::Controls::Button( pStatus );
-			pButton->SetText( "UnZoom" );
+			pButton->SetText( GWEN_T("UnZoom") );
 			pButton->onPress.Add( this, &CrossSplitter::UnZoomTest );
 			pStatus->AddControl( pButton, false );
 		}
 
 		{
 			Gwen::Controls::Button* pButton = new Gwen::Controls::Button( pStatus );
-			pButton->SetText( "CenterPanels" );
+			pButton->SetText( GWEN_T("CenterPanels") );
 			pButton->onPress.Add( this, &CrossSplitter::CenterPanels );
 			pStatus->AddControl( pButton, true );
 		}
@@ -96,7 +96,7 @@ class CrossSplitter : public GUnit
 	bool m_bSplittersVisible;
 	int	m_iCurZoom;
 	Controls::CrossSplitter* m_Splitter;
-	
+
 };
 
 

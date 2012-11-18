@@ -101,7 +101,7 @@ void ColorPicker::CreateControls()
 	GroupBox* finalGroup = new GroupBox( this );
 	finalGroup->SetPos( 180, 40 );
 	finalGroup->SetSize( 60, 60 );
-	finalGroup->SetText( "Result" );
+	finalGroup->SetText( GWEN_T("Result") );
 	finalGroup->SetName( GWEN_T("ResultGroupBox") );
 
 

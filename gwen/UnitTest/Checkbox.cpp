@@ -17,7 +17,7 @@ class Checkbox : public GUnit
 
 		Gwen::Controls::CheckBoxWithLabel* labeled = new Gwen::Controls::CheckBoxWithLabel( this );
 		labeled->SetPos( 10, 30 );
-		labeled->Label()->SetText( "Labeled CheckBox" );
+		labeled->Label()->SetText( GWEN_T("Labeled CheckBox") );
 		labeled->Checkbox()->onChecked.Add( this, &Checkbox::OnChecked );
 		labeled->Checkbox()->onUnChecked.Add( this, &Checkbox::OnUnchecked );
 		labeled->Checkbox()->onCheckChanged.Add( this, &Checkbox::OnCheckChanged );

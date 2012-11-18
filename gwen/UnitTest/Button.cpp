@@ -56,7 +56,7 @@ class Button : public GUnit
 			// Tooltip Button
 			Controls::Button* pButtonG = new Controls::Button( this );
 			pButtonG->SetText( GWEN_T("With Tooltip") );
-			pButtonG->SetToolTip( "This is a tooltip!" );
+			pButtonG->SetToolTip( GWEN_T("This is a tooltip!") );
 			Gwen::Align::PlaceBelow( pButtonG, pButtonF, 10 );
 	}
 

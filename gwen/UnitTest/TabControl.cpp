@@ -24,10 +24,10 @@ class TabControl : public GUnit
 					Controls::RadioButtonController* pRadio = new Controls::RadioButtonController( pPage );
 					pRadio->SetBounds( 10, 10, 100, 100 );
 
-						pRadio->AddOption( "Top" )->Select();
-						pRadio->AddOption( "Bottom" );
-						pRadio->AddOption( "Left" );
-						pRadio->AddOption( "Right" );
+						pRadio->AddOption( GWEN_T("Top") )->Select();
+						pRadio->AddOption( GWEN_T("Bottom") );
+						pRadio->AddOption( GWEN_T("Left") );
+						pRadio->AddOption( GWEN_T("Right") );
 
 						pRadio->onSelectionChange.Add( this, &ThisClass::OnDockChange );
 

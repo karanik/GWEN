@@ -5,7 +5,7 @@
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Label.h"
 
-namespace Gwen 
+namespace Gwen
 {
 	namespace Controls
 	{
@@ -18,7 +18,7 @@ namespace Gwen
 					SetHeight( 22 );
 					Dock( Pos::Bottom );
 					SetPadding( Padding( 2, 2, 2, 2 ) );
-					SetText( "" );
+					SetText( GWEN_T("") );
 					SetAlignment( Pos::Left | Pos::CenterV );
 				}
 

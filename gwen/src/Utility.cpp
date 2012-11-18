@@ -13,11 +13,6 @@ using namespace Gwen;
 	#pragma warning(disable:4267)// conversion from 'size_t' to 'int', possible loss of data
 #endif
 
-#ifdef __MINGW32__
-	#undef vswprintf
-	#define vswprintf _vsnwprintf
-#endif
-
 UnicodeString Gwen::Utility::Format( const UnicodeChar* fmt, ... )
 {
 	UnicodeChar strOut[ 4096 ];
@@ -92,7 +87,7 @@ bool Gwen::Utility::Strings::Wildcard( const TextObject& strWildcard, const Text
 	const UnicodeString& W = strWildcard.GetUnicode();
 	const UnicodeString& H = strHaystack.GetUnicode();
 
-	if ( strWildcard == "*" ) return true;
+	if ( strWildcard.Get().empty() ) return true;
 
 	int iPos = W.find( GWEN_T("*"), 0 );
 	if ( iPos == UnicodeString::npos ) return strWildcard == strHaystack;

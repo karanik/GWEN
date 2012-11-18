@@ -26,7 +26,7 @@ namespace Gwen
 					m_Button = new Controls::Button( this );
 					m_Button->Dock( Pos::Right );
 					m_Button->SetMargin( Margin( 2, 0, 0, 0 ) );
-					m_Button->SetText( ".." );
+					m_Button->SetText( GWEN_T("..") );
 					m_Button->SetSize( 20, 20 );
 					m_Button->onPress.Add( this, &FilePicker::OnBrowse );
 

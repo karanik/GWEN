@@ -11,14 +11,14 @@ class Window : public GUnit
 	{
 		{
 			Controls::Button* pButton = new Controls::Button( this );
-			pButton->SetText( "Normal Window" );
+			pButton->SetText( GWEN_T("Normal Window") );
 			pButton->onPress.Add( this, &ThisClass::OpenWindow );
 			pButton->SetPos( 0, 0 );
 		}
 
 		{
 			Controls::Button* pButton = new Controls::Button( this );
-			pButton->SetText( "Modal Window" );
+			pButton->SetText( GWEN_T("Modal Window") );
 			pButton->onPress.Add( this, &ThisClass::OpenModalWindow );
 			pButton->SetPos( 0, 32 );
 		}

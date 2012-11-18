@@ -40,23 +40,31 @@ namespace Gwen
 		static const unsigned char Count	= 10;
 	}
 
-//	typedef std::string UnicodeString;
-//	typedef std::wstring UnicodeString;
-	typedef std::string UnicodeString;
-//	typedef std::string String;
-	typedef UnicodeString String;
-	typedef std::ostringstream UnicodeOStringStream;
+#ifdef GWEN_NARROWCHAR
+	typedef std::string			UnicodeString;
+	typedef std::ostringstream	UnicodeOStringStream;
+	typedef char				UnicodeChar;
+	#define GWEN_T(x)			x
+	#define GWEN_VSNPRINTF		vsnprintf
+	#define GWEN_STRTOL			strtol
+	#define GWEN_STRTOF			strtof
+#else // Default to wide chars
+	typedef std::wstring		UnicodeString;
+	typedef std::wostringstream	UnicodeOStringStream;
+	typedef wchar_t				UnicodeChar;
+	#define GWEN_T(x)			L ## x
 
-//	#define GWEN_VSNPRINTF	vswprintf
-	#define GWEN_VSNPRINTF	vsnprintf
-	#define GWEN_STRTOL		strtol //wcstol
-	#define GWEN_STRTOF		strtof	//wcstod
+	#ifdef __MINGW32__
+		#define GWEN_VSNPRINTF	_vsnwprintf
+	#else
+		#define GWEN_VSNPRINTF	vswprintf
+	#endif
 
+	#define GWEN_STRTOL			wcstol
+	#define GWEN_STRTOF			wcstof
+#endif
 
-//	typedef wchar_t UnicodeChar; // Portability??
-	typedef char UnicodeChar;
-	#define GWEN_T(x)		x
-
+	typedef UnicodeString		String;
 
 
 	struct GWEN_EXPORT Margin

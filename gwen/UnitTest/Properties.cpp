@@ -53,11 +53,11 @@ class Properties : public GUnit
 				{
 					Gwen::Controls::Property::ComboBox* pCombo = new Gwen::Controls::Property::ComboBox( props );
 
-					pCombo->GetComboBox()->AddItem( GWEN_T("Option One"), "one" );
-					pCombo->GetComboBox()->AddItem( GWEN_T("Number Two"), "two" );
-					pCombo->GetComboBox()->AddItem( GWEN_T("Door Three"), "three" );
-					pCombo->GetComboBox()->AddItem( GWEN_T("Four Legs"), "four" );
-					pCombo->GetComboBox()->AddItem( GWEN_T("Five Birds"), "five" );
+					pCombo->GetComboBox()->AddItem( GWEN_T("Option One"), GWEN_T("one") );
+					pCombo->GetComboBox()->AddItem( GWEN_T("Number Two"), GWEN_T("two") );
+					pCombo->GetComboBox()->AddItem( GWEN_T("Door Three"), GWEN_T("three") );
+					pCombo->GetComboBox()->AddItem( GWEN_T("Four Legs"), GWEN_T("four") );
+					pCombo->GetComboBox()->AddItem( GWEN_T("Five Birds"), GWEN_T("five") );
 
 					Gwen::Controls::PropertyRow* pRow = props->Add( GWEN_T("ComboBox"), pCombo, GWEN_T("1") );
 					pRow->onChange.Add( this, &Properties::OnFirstNameChanged );

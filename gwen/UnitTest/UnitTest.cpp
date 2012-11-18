@@ -35,11 +35,11 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	SetSize( 1024, 768 );
 
 	Controls::CollapsibleList* pList = new Controls::CollapsibleList( this );
-	GetLeft()->GetTabControl()->AddPage( "CollapsibleList", pList );
+	GetLeft()->GetTabControl()->AddPage( GWEN_T("CollapsibleList"), pList );
 	GetLeft()->SetWidth( 150 );
 
 	m_TextOutput = new Controls::ListBox( GetBottom() );
-	pButton = GetBottom()->GetTabControl()->AddPage( "Output", m_TextOutput );
+	pButton = GetBottom()->GetTabControl()->AddPage( GWEN_T("Output"), m_TextOutput );
 	GetBottom()->SetHeight( 200 );
 
 	m_StatusBar = new Controls::StatusBar( this );
@@ -49,7 +49,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	pCenter->Dock( Pos::Fill );
 
 	{
-		Controls::CollapsibleCategory* cat = pList->Add( "Basic" );
+		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Basic") );
 
 		ADD_UNIT_TEST( Button );
 		ADD_UNIT_TEST( Label );
@@ -57,7 +57,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	}
 
 	{
-		Controls::CollapsibleCategory* cat = pList->Add( "Non-Interactive" );
+		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Non-Interactive") );
 
 		ADD_UNIT_TEST( ProgressBar );
 		ADD_UNIT_TEST( GroupBox );
@@ -66,7 +66,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	}
 
 	{
-		Controls::CollapsibleCategory* cat = pList->Add( "Controls" );
+		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Controls") );
 
 		ADD_UNIT_TEST( ComboBox );
 		ADD_UNIT_TEST( TextBox );
@@ -80,7 +80,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	}
 
 	{
-		Controls::CollapsibleCategory* cat = pList->Add( "Containers" );
+		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Containers") );
 
 		ADD_UNIT_TEST( Window );
 		ADD_UNIT_TEST( TreeControl );
@@ -92,7 +92,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	}
 
 	{
-		Controls::CollapsibleCategory* cat = pList->Add( "Non-Standard" );
+		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Non-Standard") );
 
 		ADD_UNIT_TEST( CollapsibleList );
 		ADD_UNIT_TEST( ColorPicker );

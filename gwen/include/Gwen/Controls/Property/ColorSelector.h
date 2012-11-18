@@ -17,7 +17,7 @@ namespace Gwen
 				GWEN_CONTROL_INLINE ( ColourButton, Button )
 				{
 					m_Color = Colors::Black;
-					SetText( "" );
+					SetText( GWEN_T("") );
 				}
 
 				void Render( Skin::Base* skin )

@@ -12,9 +12,9 @@ class RadioButton : public GUnit
 
 		Gwen::Controls::RadioButtonController* rc = new Gwen::Controls::RadioButtonController( this );
 
-		rc->AddOption( "Option 1" );
-		rc->AddOption( "Option 2" );
-		rc->AddOption( "Option 3" );		
+		rc->AddOption( GWEN_T("Option 1") );
+		rc->AddOption( GWEN_T("Option 2") );
+		rc->AddOption( GWEN_T("Option 3") );
 		rc->AddOption( GWEN_T("\u0627\u0644\u0622\u0646 \u0644\u062D\u0636\u0648\u0631") );
 
 		rc->SetBounds( 30, 30, 200, 200 );

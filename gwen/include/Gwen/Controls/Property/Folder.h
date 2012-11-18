@@ -19,7 +19,7 @@ namespace Gwen
 				{
 					Controls::Button* pButton = new Controls::Button( this );
 					pButton->Dock( Pos::Right );
-					pButton->SetText( "..." );
+					pButton->SetText( GWEN_T("...") );
 					pButton->SetWidth( 20 );
 					pButton->onPress.Add( this, &ThisClass::OnButtonPress );
 					pButton->SetMargin( Margin( 1, 1, 1, 2 ) );

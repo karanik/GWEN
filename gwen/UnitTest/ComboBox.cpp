@@ -16,11 +16,11 @@ class ComboBox : public GUnit
 			combo->SetWidth( 200 );
 
 
-			combo->AddItem( GWEN_T("Option One"), "one" );
-			combo->AddItem( GWEN_T("Number Two"), "two" );
-			combo->AddItem( GWEN_T("Door Three"), "three" );
-			combo->AddItem( GWEN_T("Four Legs"), "four" );
-			combo->AddItem( GWEN_T("Five Birds"), "five" );
+			combo->AddItem( GWEN_T("Option One"), GWEN_T("one") );
+			combo->AddItem( GWEN_T("Number Two"), GWEN_T("two") );
+			combo->AddItem( GWEN_T("Door Three"), GWEN_T("three") );
+			combo->AddItem( GWEN_T("Four Legs"), GWEN_T("four") );
+			combo->AddItem( GWEN_T("Five Birds"), GWEN_T("five") );
 
 			combo->onSelection.Add( this, &ComboBox::OnComboSelect );
 		}

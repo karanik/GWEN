@@ -19,14 +19,14 @@ class PageControl : public GUnit
 		{
 			Gwen::Controls::Button* pButton = new Gwen::Controls::Button( control->GetPage( 0 ) );
 			pButton->Dock( Pos::Fill );
-			pButton->SetText( "This button is fill docked on page 0" );
+			pButton->SetText( GWEN_T("This button is fill docked on page 0") );
 		}
 
 		// Page 1
 		{
 			Gwen::Controls::Button* pButton = new Gwen::Controls::Button( control->GetPage( 1 ) );
 			pButton->Dock( Pos::Top );
-			pButton->SetText( "This button is top docked on page 1" );
+			pButton->SetText( GWEN_T("This button is top docked on page 1") );
 		}
 
 		// Page 2
@@ -34,7 +34,7 @@ class PageControl : public GUnit
 			Gwen::Controls::Button* pButton = new Gwen::Controls::Button( control->GetPage( 2 ) );
 			pButton->SetSize( 400, 1000 );
 			pButton->SetPos( 50, 50 );
-			pButton->SetText( "This button is long to test scrolling (page 2)" );
+			pButton->SetText( GWEN_T("This button is long to test scrolling (page 2)") );
 		}
 	}
 

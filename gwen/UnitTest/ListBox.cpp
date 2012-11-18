@@ -27,7 +27,7 @@ class ListBox : public GUnit
 			ctrl->AddItem( GWEN_T("Chair") );
 			ctrl->AddItem( GWEN_T("Last") );
 
-			ctrl->SelectByString( "Bl*", true );
+			ctrl->SelectByString( GWEN_T("Bl*"), true );
 			ctrl->SetAllowMultiSelect( true );
 
 			ctrl->onRowSelected.Add( this, &ThisClass::RowSelected );
@@ -44,7 +44,7 @@ class ListBox : public GUnit
 			{
 				Gwen::Controls::Layout::TableRow* pRow = ctrl->AddItem( GWEN_T("Baked Beans") );
 				pRow->SetCellText( 1, GWEN_T("Heinz") );
-				pRow->SetCellText( 2, "£3.50" );
+				pRow->SetCellText( 2, GWEN_T("£3.50") );
 			}
 
 			{
