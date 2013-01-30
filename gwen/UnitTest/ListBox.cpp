@@ -29,6 +29,7 @@ class ListBox : public GUnit
 
 			ctrl->SelectByString( GWEN_T("Bl*"), true );
 			ctrl->SetAllowMultiSelect( true );
+			ctrl->SetKeyboardInputEnabled( true );
 
 			ctrl->onRowSelected.Add( this, &ThisClass::RowSelected );
 		}

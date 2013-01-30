@@ -36,9 +36,30 @@ namespace Gwen
 	#pragma warning( push )
 	#pragma warning( disable : 4996 )
 #endif
-	#define UnicodeToString(x) x
-	#define StringToUnicode(x) x
 
+		inline std::string WideStringToNarrow( const std::wstring& strIn )
+		{
+			if ( strIn.empty() ) return "";
+
+			std::string temp(strIn.length(), (char)0);
+
+			std::use_facet< std::ctype<wchar_t> >(std::locale()). \
+				narrow(&strIn[0], &strIn[0]+strIn.length(), ' ', &temp[0]);
+
+			return temp;
+		}
+
+		inline std::wstring NarrowStringToWide( const std::string& strIn )
+		{
+			if ( strIn.empty() ) return L"";
+
+			std::wstring temp(strIn.length(), (wchar_t)0);
+
+			std::use_facet< std::ctype<wchar_t> >(std::locale()). \
+				widen(&strIn[0], &strIn[0]+strIn.length(), &temp[0]);
+
+			return temp;
+		}
 
 		template<typename T> void Replace( T& str, const T& strFind, const T& strReplace )
 		{
@@ -65,7 +86,7 @@ namespace Gwen
 		inline Gwen::Rect ClampRectToRect( Gwen::Rect inside, Gwen::Rect outside, bool clampSize = false )
 		{
 			if ( inside.x < outside.x )
-				inside.x = outside.x; 
+				inside.x = outside.x;
 
 			if ( inside.y  < outside.y )
 				inside.y = outside.y;
@@ -84,7 +105,7 @@ namespace Gwen
 				else
 					inside.y = outside.w + outside.h - inside.h;
 			}
-			
+
 			return inside;
 		}
 

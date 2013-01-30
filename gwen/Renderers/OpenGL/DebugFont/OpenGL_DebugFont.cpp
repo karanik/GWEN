@@ -53,7 +53,6 @@ namespace Gwen
 			glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 			glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 
-			GLenum format = GL_RGB;
 			unsigned char* texdata = new unsigned char[256*256*4];
 			for (int i=0;i<256*256;i++)
 			{
@@ -90,7 +89,11 @@ namespace Gwen
 			if ( !text.length() )
 				return;
 
-			Gwen::String converted_string = Gwen::Utility::UnicodeToString( text );
+#ifdef GWEN_NARROWCHAR
+			const std::string &converted_string = text;
+#else
+			std::string converted_string = Gwen::Utility::WideStringToNarrow( text );
+#endif			
 
 			float yOffset=0.0f;
 			for ( int i=0; i<text.length(); i++ )
@@ -131,7 +134,11 @@ namespace Gwen
 			Gwen::Point p;
 			float fSize = pFont->size * Scale();
 
-			Gwen::String converted_string = Gwen::Utility::UnicodeToString( text );
+#ifdef GWEN_NARROWCHAR
+			const std::string &converted_string = text;
+#else
+			std::string converted_string = Gwen::Utility::WideStringToNarrow( text );
+#endif			
 			float spacing = 0.0f;
 
 			for ( int i=0; i<text.length(); i++ )

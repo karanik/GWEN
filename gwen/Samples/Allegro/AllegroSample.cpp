@@ -13,7 +13,8 @@
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_primitives.h>
 
-int main()
+
+int main(int argc, char **argv)
 {
 	if ( !al_init() ) return -1;
 
@@ -31,7 +32,6 @@ int main()
 	al_install_mouse();
 	al_install_keyboard();
 
-
 	al_register_event_source( event_queue, al_get_display_event_source(display) );
 	al_register_event_source( event_queue, al_get_mouse_event_source() );
 	al_register_event_source( event_queue, al_get_keyboard_event_source() );
@@ -44,13 +44,13 @@ int main()
 	//
 	// Create a GWEN skin
 	//
-	Gwen::Skin::TexturedBase skin;
+	Gwen::Skin::TexturedBase skin(pRenderer);
 	skin.SetRender( pRenderer );
-	skin.Init( "DefaultSkin.png" );
+	skin.Init( GWEN_T("DefaultSkin.png") );
 
 	// The fonts work differently in Allegro - it can't use
 	// system fonts. So force the skin to use a local one.
-	skin.SetDefaultFont( L"OpenSans.ttf", 11 );
+	skin.SetDefaultFont( GWEN_T("OpenSans.ttf"), 11 );
 
 	//
 	// Create a Canvas (it's root, on which all other GWEN panels are created)

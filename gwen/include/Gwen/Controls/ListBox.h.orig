@@ -60,9 +60,13 @@ namespace Gwen
 
 				
 				void OnRowSelected( Base* pControl );
+<<<<<<< HEAD
+
+=======
 				bool OnKeyDown(bool bDown);
 				bool OnKeyUp(bool bDown);
 				
+>>>>>>> upstream/master
 				Controls::Layout::Table*		m_Table;
 				ListBox::Rows					m_SelectedRows;
 

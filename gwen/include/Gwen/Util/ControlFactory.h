@@ -31,7 +31,7 @@ namespace Gwen
 				virtual Gwen::UnicodeString		OptionGet( int i ){ return GWEN_T("");}
 
 				virtual int						NumCount(){ return 0; };
-				virtual Gwen::String			NumName( int i ){ return "unknown"; };
+				virtual Gwen::String			NumName( int i ){ return GWEN_T("unknown"); };
 				virtual float					NumGet( Gwen::Controls::Base* ctrl, int i ){ return 0.0f; };
 				virtual void					NumSet( Gwen::Controls::Base* ctrl, int i, float f ){};
 
@@ -116,5 +116,5 @@ GWENCONTROLFACTORY##ThisName();
 
 #define GWEN_CONTROL_FACTORY_PROPERTY( _name_, _description_ )\
 	public:\
-	Gwen::String Name() { return #_name_; }\
+	Gwen::String Name() { return GWEN_T( #_name_ ); }\
 	Gwen::String Description() { return _description_; }

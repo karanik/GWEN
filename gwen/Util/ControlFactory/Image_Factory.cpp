@@ -8,11 +8,11 @@ namespace Property
 {
 	class ImageName: public ControlFactory::Property 
 	{
-		GWEN_CONTROL_FACTORY_PROPERTY( ImageName, "The path to the image (relative to .exe)" );
+		GWEN_CONTROL_FACTORY_PROPERTY( ImageName, GWEN_T("The path to the image (relative to .exe)") );
 
 		UnicodeString GetValue( Controls::Base* ctrl )
 		{
-			return gwen_cast<Controls::ImagePanel>(ctrl)->GetImage();
+			return gwen_cast<Controls::ImagePanel>(ctrl)->GetImage().Get();
 		}
 
 		void SetValue( Controls::Base* ctrl, const UnicodeString& str )
@@ -24,7 +24,7 @@ namespace Property
 
 	class Stretch: public ControlFactory::PropertyBool 
 	{
-		GWEN_CONTROL_FACTORY_PROPERTY( Stretch, "The path to the image (relative to .exe)" );
+		GWEN_CONTROL_FACTORY_PROPERTY( Stretch, GWEN_T("The path to the image (relative to .exe)") );
 
 		UnicodeString GetValue( Controls::Base* ctrl )
 		{
@@ -51,8 +51,8 @@ class Image_Factory : public Gwen::ControlFactory::Base
 			AddProperty( new Property::Stretch() );
 		}
 
-		virtual Gwen::String Name(){ return "ImagePanel"; }
-		virtual Gwen::String BaseName(){ return "Base"; }
+		virtual Gwen::String Name(){ return GWEN_T("ImagePanel"); }
+		virtual Gwen::String BaseName(){ return GWEN_T("Base"); }
 
 		virtual Gwen::Controls::Base* CreateInstance( Gwen::Controls::Base* parent )
 		{
