@@ -25,8 +25,8 @@ GWEN_CONTROL_CONSTRUCTOR( NumericUpDown )
 	NumericUpDownButton_Up* pButtonUp = new NumericUpDownButton_Up( pSplitter );
 		pButtonUp->onPress.Add( this, &NumericUpDown::OnButtonUp );
 		pButtonUp->SetTabable( false );
-		pButtonUp->Dock( Pos::Top );
-		pButtonUp->SetHeight( 10 );
+		pButtonUp->Dock( Pos::Top );	
+		pButtonUp->SetHeight( 10 );		
 
 	NumericUpDownButton_Down* pButtonDown = new NumericUpDownButton_Down( pSplitter );
 		pButtonDown->onPress.Add( this, &NumericUpDown::OnButtonDown );
@@ -79,7 +79,7 @@ void NumericUpDown::SetValue( int i )
 	if ( i < m_iMin ) i = m_iMin;
 
 	if ( m_iNumber == i )
-	{
+	{		
 		return;
 	}
 

@@ -11,14 +11,14 @@
 #include "Gwen/BaseRender.h"
 #include "Gwen/Font.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{
 		class Base;
 	}
 
-	namespace Skin
+	namespace Skin 
 	{
 		namespace Symbol
 		{
@@ -51,15 +51,15 @@ namespace Gwen
 
 					m_Render->FreeFont( fnt );
 				}
-
+				
 				virtual void DrawGenericPanel( Controls::Base* control ) = 0;
 
 				virtual void DrawButton( Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled ) = 0;
 				virtual void DrawTabButton( Controls::Base* control, bool bActive, int dir ) = 0;
 				virtual void DrawTabControl( Controls::Base* control ) = 0;
 				virtual void DrawTabTitleBar( Controls::Base* control ) = 0;
-
-
+				
+				
 				virtual void DrawMenuItem( Controls::Base* control, bool bSubmenuOpen, bool bChecked ) = 0;
 				virtual void DrawMenuStrip( Controls::Base* control ) = 0;
 				virtual void DrawMenu( Controls::Base* control, bool bPaddingDisabled ) = 0;
@@ -74,7 +74,7 @@ namespace Gwen
 				virtual void DrawWindowCloseButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled ) = 0;
 				virtual void DrawWindowMaximizeButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled, bool bMaximized ) = 0;
 				virtual void DrawWindowMinimizeButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled ) = 0;
-
+				
 
 				virtual void DrawHighlight( Controls::Base* control ) = 0;
 				virtual void DrawStatusBar( Controls::Base* control ) = 0;
@@ -110,7 +110,7 @@ namespace Gwen
 
 				virtual void DrawCategoryHolder( Controls::Base* ctrl ) = 0;
 				virtual void DrawCategoryInner( Controls::Base* ctrl, bool bCollapsed ) = 0;
-
+				
 
 				virtual void SetRender( Gwen::Renderer::Base* renderer )
 				{
@@ -231,7 +231,7 @@ namespace Gwen
 					Gwen::Color TooltipText;
 
 				} Colors;
-
+				
 
 			public:
 

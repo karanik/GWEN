@@ -23,7 +23,7 @@
 #include "Gwen/UserData.h"
 
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Pos
 	{
@@ -71,7 +71,7 @@ namespace Gwen
 				virtual void SetParent( Controls::Base* pParent );
 				virtual Controls::Base* GetParent() const { return m_Parent; }
 				virtual Controls::Canvas* GetCanvas();
-
+				
 				virtual Base::List& GetChildren(){ if ( m_InnerPanel ) return m_InnerPanel->GetChildren(); return Children; }
 				virtual bool IsChild( Controls::Base* pChild );
 				virtual unsigned int NumChildren();
@@ -154,7 +154,7 @@ namespace Gwen
 
 			public:
 
-				// Innerbounds is the area inside the control that
+				// Innerbounds is the area inside the control that 
 				// doesn't have child controls docked to it.
 				virtual const Gwen::Rect& GetInnerBounds() const { return m_InnerBounds; }
 
@@ -183,9 +183,9 @@ namespace Gwen
 				virtual void Render( Gwen::Skin::Base* skin );
 				virtual void RenderUnder( Gwen::Skin::Base* /*skin*/ ){};
 				virtual void RenderOver( Gwen::Skin::Base* /*skin*/ ){};
-				virtual void RenderFocus( Gwen::Skin::Base* /*skin*/ );
+				virtual void RenderFocus( Gwen::Skin::Base* /*skin*/ );		
 
-			public:
+			public:	
 
 				virtual void SetHidden( bool hidden ) { if ( m_bHidden == hidden ) return; m_bHidden = hidden; Invalidate(); Redraw(); }
 				virtual bool Hidden() const; // Returns true only if this control is hidden
@@ -218,7 +218,7 @@ namespace Gwen
 
 				virtual void SetMouseInputEnabled( bool b )	{ m_bMouseInputEnabled = b; }
 				virtual bool GetMouseInputEnabled()	{ return m_bMouseInputEnabled; }
-
+		
 				virtual void SetKeyboardInputEnabled( bool b ){ m_bKeyboardInputEnabled = b; }
 				virtual bool GetKeyboardInputEnabled() const { return m_bKeyboardInputEnabled; }
 				virtual bool NeedsInputChars(){ return false; }
@@ -263,7 +263,7 @@ namespace Gwen
 				//Other
 				virtual void SetDisabled( bool active ) { if ( m_bDisabled == active ) return; m_bDisabled = active; Redraw(); }
 				virtual bool IsDisabled(){ return m_bDisabled; }
-
+	
 				virtual void Redraw(){ UpdateColours(); m_bCacheTextureDirty = true; if ( m_Parent ) m_Parent->Redraw(); }
 				virtual void UpdateColours(){};
 				virtual void SetCacheToTexture() { m_bCacheToTexture = true; }
@@ -286,14 +286,14 @@ namespace Gwen
 				virtual void SetTabable( bool isTabable ) { m_Tabable = isTabable; }
 
 
+				
 
-
-				//Accelerator functionality
+				//Accelerator functionality 
 				void DefaultAccel( Gwen::Controls::Base* /*pCtrl*/ ) { AcceleratePressed(); }
 				virtual void AcceleratePressed() {};
 				virtual bool AccelOnlyFocus() { return false; }
 				virtual bool HandleAccelerator( Gwen::UnicodeString& accelerator );
-
+				
 				template <typename T>
 				void AddAccelerator( const TextObject& accelerator, T func, Gwen::Event::Handler* handler = NULL )
 				{
@@ -339,12 +339,12 @@ namespace Gwen
 				Base* m_InnerPanel;
 				virtual Base* Inner(){ return m_InnerPanel; }
 
-				// This is the panel's actual parent - most likely the logical
+				// This is the panel's actual parent - most likely the logical 
 				//  parent's InnerPanel (if it has one). You should rarely need this.
 				Base* m_ActualParent;
-
+				
 				Base* m_ToolTip;
-
+				
 				Skin::Base* m_Skin;
 
 				Gwen::Rect		m_Bounds;
@@ -355,7 +355,7 @@ namespace Gwen
 
 				Gwen::String m_Name;
 
-
+				
 				bool m_bRestrictToParent;
 				bool m_bDisabled;
 				bool m_bHidden;
@@ -364,7 +364,7 @@ namespace Gwen
 				bool m_bDrawBackground;
 
 				int m_iDock;
-
+			
 				unsigned char	m_Cursor;
 
 				bool m_Tabable;
@@ -392,14 +392,14 @@ namespace Gwen
 			public:
 
 				// Giver
-
+				
 				virtual void DragAndDrop_SetPackage( bool bDraggable, const String& strName = GWEN_T(""), void* pUserData = NULL );
 				virtual bool DragAndDrop_Draggable();
 				virtual bool DragAndDrop_ShouldStartDrag(){ return true; }
 				virtual void DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* pPackage, int x, int y );
 				virtual Gwen::DragAndDrop::Package* DragAndDrop_GetPackage( int x, int y );
 				virtual void DragAndDrop_EndDragging( bool /*bSuccess*/, int /*x*/, int /*y*/ ){};
-
+				
 			protected:
 
 				DragAndDrop::Package*	m_DragAndDrop_Package;
@@ -433,9 +433,9 @@ namespace Gwen
 			public:
 
 				static const char* GetIdentifier()
-				{
+				{ 
 					static const char* ident = "Base";
-					return ident;
+					return ident; 
 				};
 
 				virtual Gwen::Controls::Base* DynamicCast( const char* Variable )
@@ -467,7 +467,7 @@ namespace Gwen
 			public:
 
 				UserDataStorage	UserData;
-
+				
 		};
 
 	}
@@ -477,22 +477,22 @@ namespace Gwen
 
 	Each class in Gwen includes GWEN_DYNAMIC. You don't have to include this macro anywhere as it's
 	automatically included in the GWEN_CONTROL macro.
-
+	
 	GWEN_DYNAMIC adds 2 functions:
 
 	GetIdentifier - a static function with a static variable inside, which returns
-					the address of the static variable. The variable is defined as a
+					the address of the static variable. The variable is defined as a 
 					string containing "BASECLASSNAME:CLASSNAME". This string should be
-					as unique as possible - or the compiler might optimize the variables
+					as unique as possible - or the compiler might optimize the variables 
 					together - which means that when this function returns the address it
 					could be the same on one or more variables. Something to bear in mind.
 
-	DynamicCast - non static, takes an address returned by GetIdentifier. Will return an
+	DynamicCast - non static, takes an address returned by GetIdentifier. Will return an 
 					address of a control if the control can safely be cast to the class from
 					which the identifier was taken.
 
 	Really you shouldn't actually have to concenn yourself with that stuff. The only thing you
-	should use in theory is gwen_cast - which is used just the same as dynamic cast - except for
+	should use in theory is gwen_cast - which is used just the same as dynamic cast - except for 
 	one difference. We pass in the class name, not a pointer to the class.
 
 	gwen_cast<MyControl>(control)
@@ -512,7 +512,7 @@ T* gwen_cast( Gwen::Controls::Base* p )
 }
 
 
-template <typename T>
+template <typename T> 
 T* Gwen::Controls::Base::FindChild( const Gwen::String& name, bool bRecursive )
 {
 	return gwen_cast<T>( FindChildByName( name, bRecursive ) );

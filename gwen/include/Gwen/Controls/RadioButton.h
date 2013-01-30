@@ -16,7 +16,7 @@
 #include "Gwen/Controls/CheckBox.h"
 #include "Gwen/Controls/LabelClickable.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{
@@ -42,7 +42,7 @@ namespace Gwen
 					m_RadioButton = new RadioButton( this );
 					m_RadioButton->Dock( Pos::Left );
 					m_RadioButton->SetMargin( Margin( 0, 2, 2, 2 ) );
-					m_RadioButton->SetTabable( false );
+					m_RadioButton->SetTabable( false );					
 					m_RadioButton->SetKeyboardInputEnabled( false );
 
 					m_Label = new LabelClickable( this );

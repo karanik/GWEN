@@ -96,7 +96,7 @@ class CrossSplitter : public GUnit
 	bool m_bSplittersVisible;
 	int	m_iCurZoom;
 	Controls::CrossSplitter* m_Splitter;
-
+	
 };
 
 

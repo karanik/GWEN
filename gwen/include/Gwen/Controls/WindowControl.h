@@ -20,7 +20,7 @@
 #include "Gwen/Skin.h"
 
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{

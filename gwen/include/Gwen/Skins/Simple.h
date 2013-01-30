@@ -6,7 +6,7 @@
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Base.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Skin
 	{
@@ -22,7 +22,7 @@ namespace Gwen
 				Gwen::Color m_colBorderColor;
 				Gwen::Color m_colControlOutlineLight;
 				Gwen::Color m_colControlOutlineLighter;
-				Gwen::Color m_colBG;
+				Gwen::Color m_colBG; 
 				Gwen::Color m_colBGDark;
 				Gwen::Color m_colControl;
 				Gwen::Color m_colControlBorderHighlight;
@@ -105,7 +105,6 @@ namespace Gwen
 						m_Render->DrawLinedRect( control->GetRenderBounds() );
 					}
 
-					//Gwen::Rect rect = control->GetRenderBounds();
 					if ( bChecked )
 					{
 						m_Render->SetDrawColor( Color( 0, 0, 0, 255) );
@@ -229,9 +228,9 @@ namespace Gwen
 						m_Render->SetDrawColor( Gwen::Color( 40, 230, 30, 255 ) );
 						m_Render->DrawFilledRect( Gwen::Rect( rect.x+2, rect.y+2, rect.w -4, rect.h-4 ) );
 					}
-				}
+				}	
 
-
+		 
 				virtual void DrawCheckBox( Gwen::Controls::Base* control, bool bSelected, bool bDepressed)
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
@@ -299,9 +298,9 @@ namespace Gwen
 						m_Render->DrawFilledRect( Gwen::Rect( rect.x+1, rect.y, textStart-3, 1 ) );
 						m_Render->DrawFilledRect( Gwen::Rect( rect.x+1+textStart+textWidth, rect.y, rect.w-textStart-textWidth-2, 1 ) );
 						m_Render->DrawFilledRect( Gwen::Rect( rect.x+1, (rect.y + rect.h) -1, rect.w-2, 1 ) );
-
+						
 						m_Render->DrawFilledRect( Gwen::Rect( rect.x, rect.y+1, 1, rect.h-1 ) );
-						m_Render->DrawFilledRect( Gwen::Rect( (rect.x + rect.w)-1, rect.y+1, 1, rect.h-1 ) );
+						m_Render->DrawFilledRect( Gwen::Rect( (rect.x + rect.w)-1, rect.y+1, 1, rect.h-1 ) );			
 				}
 
 				virtual void DrawTextBox( Gwen::Controls::Base* control )
@@ -311,7 +310,7 @@ namespace Gwen
 
 					// Box inside
 					m_Render->SetDrawColor( Gwen::Color( 255, 255, 255, 255 ) );
-					m_Render->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-2 ) );
+					m_Render->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-2 ) );	
 
 					m_Render->SetDrawColor( m_colControlOutlineLight );
 					m_Render->DrawFilledRect( Gwen::Rect( rect.x+1, rect.y, rect.w-2, 1 ) );
@@ -324,7 +323,7 @@ namespace Gwen
 					if ( bHasFocus )
 					{
 						m_Render->SetDrawColor( Gwen::Color( 50, 200, 255, 150 ) );
-						m_Render->DrawLinedRect( rect );
+						m_Render->DrawLinedRect( rect );	
 					}
 				}
 
@@ -356,7 +355,7 @@ namespace Gwen
 					Gwen::Rect rect = control->GetRenderBounds();
 
 					m_Render->SetDrawColor( m_colControl );
-					m_Render->DrawFilledRect( rect );
+					m_Render->DrawFilledRect( rect );	
 
 					m_Render->SetDrawColor( m_colBorderColor );
 					m_Render->DrawLinedRect( rect );
@@ -387,7 +386,7 @@ namespace Gwen
 
 					// Light inner border
 					m_Render->SetDrawColor( Gwen::Color( 255, 255, 255, 100 ) );
-					m_Render->DrawShavedCornerRect( Gwen::Rect( rect.x+1, rect.y+1, rect.w-2, rect.h-2 ) );
+					m_Render->DrawShavedCornerRect( Gwen::Rect( rect.x+1, rect.y+1, rect.w-2, rect.h-2 ) );		
 
 					// Dark line between titlebar and main
 					m_Render->SetDrawColor( m_colBorderColor );
@@ -398,7 +397,7 @@ namespace Gwen
 
 					// Dark outer border
 					m_Render->SetDrawColor( m_colBorderColor );
-					m_Render->DrawShavedCornerRect( Gwen::Rect( rect.x, rect.y, rect.w, rect.h ) );
+					m_Render->DrawShavedCornerRect( Gwen::Rect( rect.x, rect.y, rect.w, rect.h ) );		
 				}
 
 				virtual void DrawHighlight( Gwen::Controls::Base* control )
@@ -446,7 +445,7 @@ namespace Gwen
 						//Background
 						m_Render->SetDrawColor( m_colControlDark );
 						m_Render->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-2 ) );
-
+				
 						//Right half
 						m_Render->SetDrawColor( FillColour );
 						m_Render->DrawFilledRect( Gwen::Rect( 1, 1, rect.w*progress-2, rect.h-2 ) );
@@ -456,7 +455,7 @@ namespace Gwen
 					}
 					else
 					{
-						//Background
+						//Background 
 						m_Render->SetDrawColor( m_colControlDark );
 						m_Render->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-2 ) );
 
@@ -475,9 +474,9 @@ namespace Gwen
 					m_Render->DrawShavedCornerRect( Gwen::Rect( 2, 2, rect.w-4, rect.h-4 ) );
 
 					m_Render->SetDrawColor( m_colBorderColor );
-					m_Render->DrawShavedCornerRect( rect );
+					m_Render->DrawShavedCornerRect( rect );	
 				}
-
+		 
 				virtual void DrawListBox( Gwen::Controls::Base* control )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
@@ -504,12 +503,11 @@ namespace Gwen
 						m_Render->DrawFilledRect( rect );
 					}
 				}
-
-
+				
+				
 				virtual void DrawSlider( Gwen::Controls::Base* control, bool bIsHorizontal, int numNotches, int barSize)
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
-					//Gwen::Rect notchRect = rect;
 
 					if ( bIsHorizontal )
 					{
@@ -525,7 +523,7 @@ namespace Gwen
 					m_Render->SetDrawColor( m_colBGDark );
 					m_Render->DrawFilledRect( rect );
 
-					m_Render->SetDrawColor( m_colControlDarker );
+					m_Render->SetDrawColor( m_colControlDarker );	
 					m_Render->DrawLinedRect( rect );
 				}
 
@@ -537,12 +535,12 @@ namespace Gwen
 				virtual void DrawKeyboardHighlight( Gwen::Controls::Base* control, const Gwen::Rect& r, int iOffset )
 				{
 						Gwen::Rect rect = r;
-
+		  
 						rect.x += iOffset;
 						rect.y += iOffset;
 						rect.w -= iOffset*2;
 						rect.h -= iOffset*2;
-
+						
 						//draw the top and bottom
 						bool skip = true;
 						for(int i=0; i< rect.w*0.5; i++)
@@ -568,7 +566,7 @@ namespace Gwen
 							else
 								skip = !skip;
 						}
-				}
+				}	
 
 				virtual void DrawToolTip( Gwen::Controls::Base* control )
 				{
@@ -642,7 +640,7 @@ namespace Gwen
 						m_Render->DrawFilledRect( Gwen::Rect( rect.x + rect.w/2,	rect.y + 2,				1,			rect.h - 4 ) );
 
 					m_Render->DrawFilledRect( Gwen::Rect( rect.x +2,			rect.y + rect.h/2,		rect.w-4,	1 ) );
-
+		
 				}
 
 				virtual void DrawTreeControl( Controls::Base* control )
@@ -727,7 +725,7 @@ namespace Gwen
 
 				virtual void DrawCategoryHolder( Controls::Base* ctrl ){}
 				virtual void DrawCategoryInner( Controls::Base* ctrl, bool bCollapsed ){}
-		};
+		}; 
 	}
 }
 #endif

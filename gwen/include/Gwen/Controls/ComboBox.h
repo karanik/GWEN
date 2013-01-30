@@ -16,7 +16,7 @@
 #include "Gwen/Controls/Menu.h"
 
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{
@@ -64,7 +64,7 @@ namespace Gwen
 				Controls::Base*	m_Button;
 
 		};
-
+		
 	}
 }
 #endif

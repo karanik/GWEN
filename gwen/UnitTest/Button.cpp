@@ -5,7 +5,7 @@ using namespace Gwen;
 class Button : public GUnit
 {
 	public:
-
+ 
 	GWEN_CONTROL_INLINE( Button, GUnit )
 	{
 			// Normal button

@@ -32,8 +32,8 @@ GWEN_CONTROL_CONSTRUCTOR( DockBase )
 }
 
 TabControl* DockBase::GetTabControl()
-{
-	return m_DockedTabControl;
+{ 
+	return m_DockedTabControl; 
 }
 
 void DockBase::SetupChildDock( int iPos )
@@ -79,7 +79,7 @@ DockBase** DockBase::GetChildDockPtr( int iPos )
 DockBase* DockBase::GetChildDock( int iPos )
 {
 	DockBase** pDock = GetChildDockPtr( iPos );
-
+	
 	if ( !(*pDock) )
 	{
 		(*pDock) = new DockBase( this );

@@ -34,7 +34,7 @@ void TabButton::Layout( Skin::Base* skin  )
 		SetPadding( Padding( 3, 1, 5, 4 ) );
 	else if ( iParentDock == Pos::Top )
 		SetPadding( Padding( 3, 3, 5, 2 ) );
-	else
+	else 
 		SetPadding( Padding( 3, 2, 5, 2 ) );
 
 	BaseClass::Layout( skin );

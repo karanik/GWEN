@@ -11,7 +11,6 @@
 #include "Gwen/Controls/Layout/Position.h"
 #include "Gwen/Platform.h"
 
-
 using namespace Gwen;
 
 #define ADD_UNIT_TEST( name )\
@@ -37,7 +36,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	Controls::CollapsibleList* pList = new Controls::CollapsibleList( this );
 	GetLeft()->GetTabControl()->AddPage( GWEN_T("CollapsibleList"), pList );
 	GetLeft()->SetWidth( 150 );
-
+	
 	m_TextOutput = new Controls::ListBox( GetBottom() );
 	pButton = GetBottom()->GetTabControl()->AddPage( GWEN_T("Output"), m_TextOutput );
 	GetBottom()->SetHeight( 200 );
@@ -48,7 +47,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	Controls::Layout::Center* pCenter = new Controls::Layout::Center( this );
 	pCenter->Dock( Pos::Fill );
 
-	{
+	{	
 		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Basic") );
 
 		ADD_UNIT_TEST( Button );
@@ -56,7 +55,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 		ADD_UNIT_TEST( LabelMultiline );
 	}
 
-	{
+	{	
 		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Non-Interactive") );
 
 		ADD_UNIT_TEST( ProgressBar );
@@ -65,13 +64,13 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 		ADD_UNIT_TEST( StatusBar );
 	}
 
-	{
+	{	
 		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Controls") );
 
 		ADD_UNIT_TEST( ComboBox );
 		ADD_UNIT_TEST( TextBox );
 		ADD_UNIT_TEST( ListBox );
-		ADD_UNIT_TEST( CrossSplitter );
+		ADD_UNIT_TEST( CrossSplitter );		
 		ADD_UNIT_TEST( RadioButton );
 		ADD_UNIT_TEST( Checkbox );
 		ADD_UNIT_TEST( Numeric );
@@ -79,7 +78,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 		ADD_UNIT_TEST( MenuStrip );
 	}
 
-	{
+	{	
 		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Containers") );
 
 		ADD_UNIT_TEST( Window );
@@ -91,7 +90,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 
 	}
 
-	{
+	{	
 		Controls::CollapsibleCategory* cat = pList->Add( GWEN_T("Non-Standard") );
 
 		ADD_UNIT_TEST( CollapsibleList );
@@ -99,7 +98,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	}
 
 	m_StatusBar->SendToBack();
-
+	
 	PrintText( GWEN_T("Unit Test Started.\n") );
 
 	m_fLastSecond = Gwen::Platform::GetTimeInSeconds();

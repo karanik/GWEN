@@ -10,7 +10,7 @@
 using namespace Gwen;
 using namespace Gwen::Controls;
 
-class CategoryButton : public Button
+class CategoryButton : public Button 
 {
 	GWEN_CONTROL_INLINE ( CategoryButton, Button )
 	{
@@ -32,7 +32,7 @@ class CategoryButton : public Button
 			else if ( IsHovered() ) skin->GetRender()->SetDrawColor( skin->Colors.Category.Line.Button_Hover );
 			else skin->GetRender()->SetDrawColor( skin->Colors.Category.Line.Button );
 		}
-
+	
 		skin->GetRender()->DrawFilledRect( this->GetRenderBounds() );
 	}
 
@@ -55,7 +55,7 @@ class CategoryButton : public Button
 	bool m_bAlt;
 };
 
-class CategoryHeaderButton : public Button
+class CategoryHeaderButton : public Button 
 {
 	GWEN_CONTROL_INLINE ( CategoryHeaderButton, Button )
 	{
@@ -112,7 +112,7 @@ void CollapsibleCategory::OnSelection( Controls::Base* control )
 	{
 		UnselectAll();
 	}
-
+	
 	pChild->SetToggleState( true );
 
 	onSelection.Call( this );

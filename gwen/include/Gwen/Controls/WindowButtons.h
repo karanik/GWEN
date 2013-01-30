@@ -13,16 +13,16 @@
 #include "Gwen/Skin.h"
 
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{
 		class GWEN_EXPORT WindowCloseButton : public Button
 		{
-			GWEN_CONTROL_INLINE( WindowCloseButton, Button )
-			{
-				m_pWindow = NULL;
-				SetSize( 31, 31 );
+			GWEN_CONTROL_INLINE( WindowCloseButton, Button ) 
+			{ 
+				m_pWindow = NULL; 
+				SetSize( 31, 31 ); 
 				SetText( GWEN_T("") );
 			}
 
@@ -33,9 +33,9 @@ namespace Gwen
 					skin->DrawWindowCloseButton( this, IsDepressed() && IsHovered(), IsHovered() && ShouldDrawHover(), IsDisabled() );
 				}
 
-				void SetWindow( Gwen::Controls::Base* p )
-				{
-					m_pWindow = p;
+				void SetWindow( Gwen::Controls::Base* p ) 
+				{ 
+					m_pWindow = p; 
 				}
 
 			protected:

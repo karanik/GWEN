@@ -11,7 +11,7 @@
 #include "Gwen/Controls/Property/BaseProperty.h"
 #include "Gwen/Controls/CheckBox.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{

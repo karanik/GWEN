@@ -82,7 +82,7 @@ void WindowControl::DestroyModal()
 	// Really should be restoring our parent here.. but we don't know who it is.
 	// Assume it's the canvas.
 	SetParent( GetCanvas() );
-
+	
 	m_Modal->DelayedDelete();
 	m_Modal = NULL;
 }

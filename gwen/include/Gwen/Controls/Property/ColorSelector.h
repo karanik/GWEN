@@ -6,13 +6,13 @@
 #include "Gwen/Controls/Menu.h"
 #include "Gwen/Controls/HSVColorPicker.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{
 		namespace Internal
 		{
-			class ColourButton : public Button
+			class ColourButton : public Button 
 			{
 				GWEN_CONTROL_INLINE ( ColourButton, Button )
 				{

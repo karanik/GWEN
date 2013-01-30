@@ -7,7 +7,7 @@
 #include "Gwen/Controls/Button.h"
 #include "Gwen/Controls/Dialogs/FolderOpen.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{

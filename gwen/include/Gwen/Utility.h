@@ -39,31 +39,7 @@ namespace Gwen
 	#define UnicodeToString(x) x
 	#define StringToUnicode(x) x
 
-#if 0
-		inline String UnicodeToString( const UnicodeString& strIn )
-		{
-			if ( !strIn.length() ) return "";
 
-			String temp(strIn.length(), (char)0);
-
-			std::use_facet< std::ctype<wchar_t> >(std::locale()). \
-				narrow(&strIn[0], &strIn[0]+strIn.length(), ' ', &temp[0]);
-
-			return temp;
-		}
-
-		inline UnicodeString StringToUnicode( const String& strIn )
-		{
-			if ( !strIn.length() ) return GWEN_T("");
-
-			UnicodeString temp(strIn.length(), (wchar_t)0);
-
-			std::use_facet< std::ctype<wchar_t> >(std::locale()). \
-				widen(&strIn[0], &strIn[0]+strIn.length(), &temp[0]);
-
-			return temp;
-		}
-#endif
 		template<typename T> void Replace( T& str, const T& strFind, const T& strReplace )
 		{
 			size_t pos = 0;
@@ -89,7 +65,7 @@ namespace Gwen
 		inline Gwen::Rect ClampRectToRect( Gwen::Rect inside, Gwen::Rect outside, bool clampSize = false )
 		{
 			if ( inside.x < outside.x )
-				inside.x = outside.x;
+				inside.x = outside.x; 
 
 			if ( inside.y  < outside.y )
 				inside.y = outside.y;
@@ -108,12 +84,11 @@ namespace Gwen
 				else
 					inside.y = outside.w + outside.h - inside.h;
 			}
-
+			
 			return inside;
 		}
 
-		GWEN_EXPORT UnicodeString Format(const UnicodeChar *fmt, ... );
-
+		GWEN_EXPORT UnicodeString Format( const UnicodeChar *fmt, ... );
 
 		namespace Strings
 		{

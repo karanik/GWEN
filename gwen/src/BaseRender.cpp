@@ -28,19 +28,7 @@ namespace Gwen
 			if ( GetCTT() )
 				GetCTT()->ShutDown();
 		}
-#if 0
-		void Base::RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::String& text )
-		{
-			Gwen::UnicodeString str = Gwen::Utility::StringToUnicode( text );
-			RenderText( pFont, pos, str );
-		}
 
-		Gwen::Point Base::MeasureText( Gwen::Font* pFont, const Gwen::String& text )
-		{
-			Gwen::UnicodeString str = Gwen::Utility::StringToUnicode( text );
-			return MeasureText( pFont, str );
-		}
-#endif
 		void Base::DrawLinedRect( Gwen::Rect rect )
 		{
 			DrawFilledRect( Gwen::Rect( rect.x, rect.y, rect.w, 1 ) );
@@ -102,12 +90,12 @@ namespace Gwen
 		}
 
 		void Gwen::Renderer::Base::SetClipRegion( Gwen::Rect rect )
-		{
-			m_rectClipRegion = rect;
+		{ 
+			m_rectClipRegion = rect; 
 		}
 
-		void Base::AddClipRegion( Gwen::Rect rect )
-		{
+		void Base::AddClipRegion( Gwen::Rect rect ) 
+		{ 
 			rect.x = m_RenderOffset.x;
 			rect.y = m_RenderOffset.y;
 
@@ -138,15 +126,15 @@ namespace Gwen
 		}
 
 		const Gwen::Rect& Base::ClipRegion() const
-		{
-			return m_rectClipRegion;
+		{ 
+			return m_rectClipRegion; 
 		}
 
 		bool Base::ClipRegionVisible()
 		{
 			if ( m_rectClipRegion.w <= 0 || m_rectClipRegion.h <= 0 )
 				return false;
-
+			
 			return true;
 		}
 
@@ -156,7 +144,7 @@ namespace Gwen
 			DrawFilledRect( pTargetRect );
 		}
 
-
+		
 		/*
 			If they haven't defined these font functions in their renderer code
 			we just draw some rects where the letters would be to give them an idea.
@@ -203,7 +191,7 @@ namespace Gwen
 
 
 				if ( chr == 'o' || chr == 'O' || chr == '0' )
-					DrawLinedRect( r );
+					DrawLinedRect( r );	
 				else
 					DrawFilledRect( r );
 			}

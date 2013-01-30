@@ -13,7 +13,7 @@
 #include "Gwen/Controls/MenuItem.h"
 #include "Gwen/Controls/ScrollControl.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{
@@ -56,7 +56,7 @@ namespace Gwen
 
 				virtual bool ShouldHoverOpenMenu(){ return true; }
 				virtual void OnAddItem( MenuItem* item );
-
+			
 				bool m_bDisableIconMargin;
 				bool m_bDeleteOnClose;
 		};

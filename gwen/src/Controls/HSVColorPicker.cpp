@@ -66,7 +66,7 @@ GWEN_CONTROL_CONSTRUCTOR( HSVColorPicker )
 		label->SizeToContents();
 		label->SetPos( x, y );
 
-
+		
 		TextBoxNumeric* numeric = new TextBoxNumeric( this );
 		numeric->SetName( GWEN_T("GreenBox") );
 		numeric->SetPos( x + 15, y -1  );

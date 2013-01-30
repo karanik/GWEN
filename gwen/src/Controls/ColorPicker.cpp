@@ -62,7 +62,6 @@ void ColorPicker::NumericTyped( Gwen::Controls::Base* control )
 	if ( box->GetText() == GWEN_T(""))
 		return;
 
-
 	int textValue =  Gwen::Utility::Strings::To::Int(box->GetText().GetUnicode());
 	if ( textValue < 0) textValue = 0;
 	if ( textValue > 255) textValue = 255;
@@ -82,10 +81,10 @@ void ColorPicker::NumericTyped( Gwen::Controls::Base* control )
 	UpdateControls();
 }
 
-void ColorPicker::SetColor( Gwen::Color color )
+void ColorPicker::SetColor( Gwen::Color color ) 
 {
-	m_Color = color;
-	UpdateControls();
+	m_Color = color; 
+	UpdateControls(); 
 }
 
 void ColorPicker::CreateControls()
@@ -103,7 +102,7 @@ void ColorPicker::CreateControls()
 	finalGroup->SetSize( 60, 60 );
 	finalGroup->SetText( GWEN_T("Result") );
 	finalGroup->SetName( GWEN_T("ResultGroupBox") );
-
+	
 
 	ColorDisplay* disp = new ColorDisplay( finalGroup );
 	disp->SetName( GWEN_T("Result") );

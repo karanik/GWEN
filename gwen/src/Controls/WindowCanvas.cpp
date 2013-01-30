@@ -42,7 +42,7 @@ WindowCanvas::WindowCanvas( int x, int y, int w, int h, Gwen::Skin::Base* pSkin,
 	pSkin->GetRender()->InitializeContext( this );
 	pSkin->GetRender()->Init();
 	m_pSkinChange = pSkin;
-
+	
 	SetSize( w, h );
 
 	m_TitleBar = new Gwen::ControlsInternal::Dragger( this );
@@ -61,7 +61,7 @@ WindowCanvas::WindowCanvas( int x, int y, int w, int h, Gwen::Skin::Base* pSkin,
 		m_Title->Dock( Pos::Fill );
 		m_Title->SetPadding( Padding( 8, 0, 0, 0 ) );
 		m_Title->SetTextColor( GetSkin()->Colors.Window.TitleInactive );
-
+		
 		// CLOSE
 		{
 			m_pClose = new Gwen::Controls::WindowCloseButton( m_TitleBar, GWEN_T("Close") );
@@ -216,7 +216,7 @@ Skin::Base* WindowCanvas::GetSkin( void )
 
 void WindowCanvas::Dragger_Start()
 {
-	Gwen::Platform::GetCursorPos( m_HoldPos );
+	Gwen::Platform::GetCursorPos( m_HoldPos );	
 
 	m_HoldPos.x -= m_WindowPos.x;
 	m_HoldPos.y -= m_WindowPos.y;
@@ -225,7 +225,7 @@ void WindowCanvas::Dragger_Start()
 void WindowCanvas::Dragger_Moved()
 {
 	Gwen::Point p;
-	Gwen::Platform::GetCursorPos( p );
+	Gwen::Platform::GetCursorPos( p );	
 
 	//
 	// Dragged out of maximized
@@ -270,7 +270,7 @@ bool WindowCanvas::IsOnTop()
 void WindowCanvas::Sizer_Moved()
 {
 	Gwen::Point p;
-	Gwen::Platform::GetCursorPos( p );
+	Gwen::Platform::GetCursorPos( p );	
 
 	int w = (p.x) - m_WindowPos.x;
 	int h = (p.y) - m_WindowPos.y;

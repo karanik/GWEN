@@ -8,7 +8,7 @@
 #include "Gwen/Texture.h"
 #include "Gwen/Skins/Texturing.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Skin
 	{
@@ -116,7 +116,7 @@ namespace Gwen
 						Texturing::Single Plus;
 
 					} Tree;
-
+					
 
 					struct  ProgressBar_t
 					{
@@ -144,7 +144,7 @@ namespace Gwen
 							Texturing::Bordered	Hover[4];
 							Texturing::Bordered	Down[4];
 							Texturing::Bordered	Disabled[4];
-
+							
 						} Button;
 
 					} Scroller;
@@ -289,7 +289,7 @@ namespace Gwen
 
 				} Textures;
 
-
+				
 				virtual void Init( const TextObject& TextureName )
 				{
 					m_DefaultFont.facename	= GWEN_T("Microsoft Sans Serif");
@@ -297,7 +297,7 @@ namespace Gwen
 
 					m_Texture.Load( TextureName, GetRender() );
 
-
+					
 					Colors.Window.TitleActive	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 0, 508, Color( 255, 0, 0 ) );
 					Colors.Window.TitleInactive	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 1, 508, Color( 255, 255, 0) );
 					Colors.Button.Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 2, 508, Color( 255, 255, 0) );
@@ -316,7 +316,7 @@ namespace Gwen
 					Colors.Label.Bright				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 9, 508, Color( 255, 255, 0) );
 					Colors.Label.Dark				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 8, 500, Color( 255, 255, 0) );
 					Colors.Label.Highlight			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 9, 500, Color( 255, 255, 0) );
-
+		
 					Colors.Tree.Lines				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 10, 508, Color( 255, 255, 0) );
 					Colors.Tree.Normal				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 11, 508, Color( 255, 255, 0) );
 					Colors.Tree.Hover				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 10, 500, Color( 255, 255, 0) );
@@ -355,7 +355,7 @@ namespace Gwen
 					Colors.Category.LineAlt.Button			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 25, 508, Color( 255, 255, 0) );
 					Colors.Category.LineAlt.Button_Hover	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 24, 500, Color( 255, 255, 0) );
 					Colors.Category.LineAlt.Button_Selected	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 25, 500, Color( 255, 255, 0) );
-
+	
 					Textures.Shadow.Init			( &m_Texture, 448, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
 					Textures.Tooltip.Init			( &m_Texture, 128, 320,	127,	31,		Margin( 8, 8, 8, 8 ) );
 					Textures.StatusBar.Init		 ( &m_Texture, 128, 288, 127, 31, Margin( 8, 8, 8, 8 ) );
@@ -378,7 +378,7 @@ namespace Gwen
 					Textures.RadioButton.Active.Normal.Init		( &m_Texture, 464, 64, 15, 15 );
 					Textures.RadioButton.Disabled.Checked.Init	( &m_Texture, 448, 80, 15, 15 );
 					Textures.RadioButton.Disabled.Normal.Init	( &m_Texture, 464, 80, 15, 15 );
-
+					
 					Textures.TextBox.Normal.Init		( &m_Texture, 0, 150, 127, 21, Margin( 4, 4, 4, 4 ) );
 					Textures.TextBox.Focus.Init			( &m_Texture, 0, 172, 127, 21, Margin( 4, 4, 4, 4 ) );
 					Textures.TextBox.Disabled.Init		( &m_Texture, 0, 193, 127, 21, Margin( 4, 4, 4, 4 ) );
@@ -501,7 +501,7 @@ namespace Gwen
 					if ( bDisabled )	return Textures.Input.Button.Disabled.Draw( GetRender(), control->GetRenderBounds() );
 					if ( bDepressed )	return Textures.Input.Button.Pressed.Draw( GetRender(), control->GetRenderBounds() );
 					if ( bHovered )		return Textures.Input.Button.Hovered.Draw( GetRender(), control->GetRenderBounds() );
-
+					
 					Textures.Input.Button.Normal.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
@@ -558,11 +558,11 @@ namespace Gwen
 						if ( control->IsDisabled() )
 							Textures.RadioButton.Disabled.Normal.Draw( GetRender(), control->GetRenderBounds() );
 						else
-							Textures.RadioButton.Active.Normal.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.RadioButton.Active.Normal.Draw( GetRender(), control->GetRenderBounds() );						
 					}
-				}
+				}	
 
-
+		 
 				virtual void DrawCheckBox( Gwen::Controls::Base* control, bool bSelected, bool bDepressed)
 				{
 					if ( bSelected )
@@ -577,7 +577,7 @@ namespace Gwen
 						if ( control->IsDisabled() )
 							Textures.Checkbox.Disabled.Normal.Draw( GetRender(), control->GetRenderBounds() );
 						else
-							Textures.Checkbox.Active.Normal.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.Checkbox.Active.Normal.Draw( GetRender(), control->GetRenderBounds() );						
 					}
 				}
 
@@ -619,7 +619,7 @@ namespace Gwen
 				{
 					if ( bActive )
 						return DrawActiveTabButton( control, dir );
-
+				
 					if ( dir == Pos::Bottom )	return Textures.Tab.Bottom.Inactive.Draw( GetRender(), control->GetRenderBounds() );
 					if ( dir == Pos::Top )		return Textures.Tab.Top.Inactive.Draw( GetRender(), control->GetRenderBounds() );
 					if ( dir == Pos::Left )		return Textures.Tab.Left.Inactive.Draw( GetRender(), control->GetRenderBounds() );
@@ -643,10 +643,8 @@ namespace Gwen
 
 				virtual void DrawWindow( Gwen::Controls::Base* control, int topHeight, bool inFocus )
 				{
-					//Gwen::Rect rect = control->GetRenderBounds();
-
 					if ( inFocus ) Textures.Window.Normal.Draw( GetRender(), control->GetRenderBounds() );
-					else Textures.Window.Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					else Textures.Window.Inactive.Draw( GetRender(), control->GetRenderBounds() );	
 				}
 
 				virtual void DrawHighlight( Gwen::Controls::Base* control )
@@ -688,7 +686,7 @@ namespace Gwen
 
 					if ( isHovered )
 						return Textures.Scroller.ButtonH_Hover.Draw( GetRender(), control->GetRenderBounds() );
-
+	
 					return Textures.Scroller.ButtonH_Normal.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
@@ -716,7 +714,7 @@ namespace Gwen
 						Textures.ProgressBar.Front.Draw( GetRender(), rect );
 					}
 				}
-
+		 
 				virtual void DrawListBox( Gwen::Controls::Base* control )
 				{
 					return Textures.Input.ListBox.Background.Draw( GetRender(), control->GetRenderBounds() );
@@ -725,12 +723,12 @@ namespace Gwen
 				virtual void DrawListBoxLine( Gwen::Controls::Base* control, bool bSelected, bool bEven )
 				{
 					if ( bSelected )
-					{
+                    {
 						if ( bEven )
 							return Textures.Input.ListBox.EvenLineSelected.Draw( GetRender(), control->GetRenderBounds() );
-						else
+						else 
 							return Textures.Input.ListBox.OddLineSelected.Draw( GetRender(), control->GetRenderBounds() );
-					}
+                    }
 
 					if ( control->IsHovered() )
 							return Textures.Input.ListBox.Hovered.Draw( GetRender(), control->GetRenderBounds() );
@@ -740,7 +738,7 @@ namespace Gwen
 
 					return Textures.Input.ListBox.OddLine.Draw( GetRender(), control->GetRenderBounds() );
 				}
-
+				
 				void DrawSliderNotchesH( Gwen::Rect rect, int numNotches, int dist )
 				{
 					if ( numNotches == 0 ) return;
@@ -762,7 +760,7 @@ namespace Gwen
 						GetRender()->DrawFilledRect( Gwen::Rect( rect.x + dist - 1, rect.y + iSpacing * i, 5, 1 ) );
 					}
 				}
-
+				
 				virtual void DrawSlider( Gwen::Controls::Base* control, bool bIsHorizontal, int numNotches, int barSize )
 				{
 					if ( bIsHorizontal )
@@ -804,12 +802,12 @@ namespace Gwen
 				virtual void DrawKeyboardHighlight( Gwen::Controls::Base* control, const Gwen::Rect& r, int iOffset )
 				{
 						Gwen::Rect rect = r;
-
+		  
 						rect.x += iOffset;
 						rect.y += iOffset;
 						rect.w -= iOffset*2;
 						rect.h -= iOffset*2;
-
+						
 						//draw the top and bottom
 						bool skip = true;
 						for(int i=0; i< rect.w*0.5; i++)
@@ -835,7 +833,7 @@ namespace Gwen
 							else
 								skip = !skip;
 						}
-				}
+				}	
 
 				virtual void DrawToolTip( Gwen::Controls::Base* control )
 				{
@@ -862,7 +860,7 @@ namespace Gwen
 				}
 
 				virtual void DrawComboDownArrow( Gwen::Controls::Base* control, bool bHovered, bool bDown, bool bMenuOpen, bool bDisabled )
-				{
+				{	
 					if ( bDisabled )
 						return Textures.Input.ComboBox.Button.Disabled.Draw( GetRender(), control->GetRenderBounds() );
 
@@ -991,7 +989,7 @@ namespace Gwen
 
 					Textures.Window.Mini.Draw( GetRender(), r );
 				}
-
+				
 
 				virtual void DrawSlideButton( Gwen::Controls::Base* control, bool bDepressed, bool bHorizontal )
 				{
@@ -1033,7 +1031,7 @@ namespace Gwen
 
 					Textures.CategoryList.Inner.Draw( GetRender(), ctrl->GetRenderBounds() );
 				}
-		};
+		}; 
 	}
 }
 #endif

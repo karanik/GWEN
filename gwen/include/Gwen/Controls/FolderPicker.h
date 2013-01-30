@@ -13,7 +13,7 @@
 #include "Gwen/Controls/TextBox.h"
 
 
-namespace Gwen
+namespace Gwen 
 {
 	namespace Controls
 	{

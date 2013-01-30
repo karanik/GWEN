@@ -10,12 +10,12 @@
 
 #include "Gwen/Structures.h"
 
-namespace Gwen
+namespace Gwen 
 {
 	struct Font;
 	struct Texture;
 	class WindowProvider;
-
+	
 	namespace Renderer
 	{
 		class Base;
@@ -69,14 +69,12 @@ namespace Gwen
 				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text );
 
 				//
-				// No need to implement these functions in your derived class, but if
+				// No need to implement these functions in your derived class, but if 
 				// you can do them faster than the default implementation it's a good idea to.
 				//
 				virtual void DrawLinedRect( Gwen::Rect rect );
 				virtual void DrawPixel( int x, int y );
 				virtual void DrawShavedCornerRect( Gwen::Rect rect, bool bSlight = false );
-//				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::String& text );
-//				virtual void RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::String& text );
 
 			public:
 
@@ -88,7 +86,7 @@ namespace Gwen
 				void Translate( Gwen::Rect& rect );
 
 				//
-				// Set the rendering offset. You shouldn't have to
+				// Set the rendering offset. You shouldn't have to 
 				// touch these, ever.
 				//
 				void SetRenderOffset( const Gwen::Point& offset ){ m_RenderOffset = offset; }
@@ -112,7 +110,7 @@ namespace Gwen
 				ICacheToTexture* m_RTT;
 
 			public:
-
+				
 				void SetScale( float fScale ){ m_fScale = fScale; }
 				float Scale() const { return m_fScale; }
 
