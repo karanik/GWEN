@@ -30,37 +30,15 @@ using namespace Gwen;
 
 UnicodeString Gwen::Utility::Format( const UnicodeChar* fmt, ... )
 {
+	UnicodeChar strOut[ 4096 ];
+
 	va_list s;
-	int len = 0;
-	
 	va_start( s, fmt );
-	
-	// Determine the length of the resulting string, this method is much faster
-	// than looping and reallocating a bigger buffer size.
-	{	
-		FILE* fnull = fopen( GWEN_FNULL, "wb" );
-		va_list c;
-		va_copy( c, s );
-		len = GWEN_VFPRINTF( fnull, fmt, c );
-		va_end( c );
-		fclose( fnull );
-	} 
-	
-	UnicodeString strOut;
-	
-	if (len > 0)
-	{
-		strOut.resize( len + 1 );
-		va_list c;
-		va_copy( c, s );
-		len = GWEN_VSNPRINTF( &strOut[0], strOut.size(), fmt, c );
-		va_end( c );
-		strOut.resize( len );
-	}
-	
-	va_end( s );
-	
-	return strOut;
+	GWEN_VSNPRINTF( strOut, sizeof(strOut), fmt, s );
+	va_end(s);
+
+	UnicodeString str = strOut;
+	return str;
 }
 
 
