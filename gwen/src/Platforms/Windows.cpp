@@ -19,8 +19,8 @@
 #include "Gwen/Input/Windows.h"
 
 #include <windows.h>
-#include <ShlObj.h>
-#include <Shobjidl.h>
+#include <shlobj.h>
+#include <shobjidl.h>
 
 using namespace Gwen;
 using namespace Gwen::Platform;
